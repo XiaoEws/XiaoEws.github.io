@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小饿工作室 - XiaoE_WorkShop</title>
     <meta name="description" content="小饿工作室是一个由青少年组成的开发团队，专注于网页设计与应用开发。">
-<!-- CSS样式 -->
+    <!-- CSS样式 -->
     <style>
         /* 基本样式重置 */
         * {
@@ -20,6 +20,28 @@
             line-height: 1.6;
             color: #333;
             background-color: #f4f4f4;
+        }
+
+        /* 语言切换按钮样式 */
+        .language-switcher {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        .language-switcher button {
+            padding: 5px 10px;
+            margin-left: 5px;
+            border: none;
+            background-color: #444;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .language-switcher button.active {
+            background-color: #575757;
         }
 
         /* 头部样式 */
@@ -61,7 +83,7 @@
         .container {
             padding: 20px;
             max-width: 1200px;
-            margin: auto;
+            margin: 60px auto 20px auto; /* 为语言切换按钮留出空间 */
             background-color: #fff;
         }
 
@@ -98,22 +120,38 @@
                 float: none;
                 width: 100%;
             }
+
+            .language-switcher {
+                top: 5px;
+                right: 5px;
+            }
+
+            .language-switcher button {
+                padding: 3px 8px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- 语言切换按钮 -->
+    <div class="language-switcher">
+        <button id="lang-zh" class="active">中文</button>
+        <button id="lang-en">English</button>
+    </div>
+
     <!-- 头部 -->
     <header>
-        <h1>小饿工作室</h1>
-        <p>青少年开发团队</p>
+        <h1 id="header-title">小饿工作室</h1>
+        <p id="header-subtitle">青少年开发团队</p>
     </header>
 
     <!-- 导航栏 -->
     <nav>
-        <a href="#about">关于我们</a>
-        <a href="#portfolio">作品集</a>
-        <a href="#contact">联系我们</a>
+        <a href="#about" id="nav-about">关于我们</a>
+        <a href="#portfolio" id="nav-portfolio">作品集</a>
+        <a href="#contact" id="nav-contact">联系我们</a>
     </nav>
 
     <!-- 主内容 -->
@@ -121,32 +159,31 @@
 
         <!-- 关于我们 -->
         <section id="about">
-            <h2>关于我们</h2>
-            <p>小饿工作室是一个由充满激情和创造力的青少年组成的开发团队。我们致力于将想法变为现实，专注于网页设计与应用开发。</p>
-            <p><strong>注意：</strong> 我们目前不提供数字营销服务，也不接受外部订单，仅用于展示我们的作品和能力。</p>
+            <h2 id="about-title">关于我们</h2>
+            <p id="about-content">小饿工作室是一个由充满激情和创造力的青少年组成的开发团队。我们致力于将想法变为现实，专注于网页设计与应用开发。</p>
+            <p id="about-note"><strong>注意：</strong> 我们目前不提供数字营销服务，也不接受外部订单，仅用于展示我们的作品和能力。</p>
         </section>
 
         <!-- 作品集 -->
         <section id="portfolio">
-            <h2>作品集</h2>
-暂无
+            <h2 id="portfolio-title">作品集</h2>
+            <p id="portfolio-content">暂无</p>
             <!-- 添加更多作品 -->
         </section>
 
         <!-- 联系我们 -->
         <section id="contact">
-            <h2>联系我们</h2>
-            <p>如果您有任何疑问或合作意向，可以通过以下方式与我们联系：</p>
+            <h2 id="contact-title">联系我们</h2>
+            <p id="contact-content">如果您有任何疑问或合作意向，可以通过以下方式与我们联系：</p>
             <ul>
-                <li>
+                <li id="contact-email">
                     邮箱: tiantiane0616@126.com
                     <br>
                     官方唯一指定客服: QQ 3821852100
                     <br>
-                     <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272">加入我们(QQ面试群995627272)</a>a
-                [招收有想法的青少年开发者(10-16周岁)]
+                    <a href="" id="join-us">加入我们(QQ面试群995627272)</a>
+                    [招收有想法的青少年开发者(10-16周岁)]
                 </li>
-               
                 <!-- 可以根据需要添加电话或地址 -->
             </ul>
         </section>
@@ -155,8 +192,91 @@
 
     <!-- 页脚 -->
     <footer>
-        <p>&copy; 2024 小饿工作室. 版权所有.</p>
+        <p id="footer-copyright">&copy; 2024 小饿工作室. 版权所有.<br>页面由@天天饿喵Tiantiane 制作构建</p>
     </footer>
+
+    <!-- JavaScript代码 -->
+    <script type="text/javascript">
+        // 语言数据
+        const langData = {
+            "zh": {
+                "headerTitle": "小饿工作室",
+                "headerSubtitle": "青少年开发团队",
+                "navAbout": "关于我们",
+                "navPortfolio": "作品集",
+                "navContact": "联系我们",
+                "aboutTitle": "关于我们",
+                "aboutContent": "小饿工作室是一个由充满激情和创造力的青少年组成的开发团队。我们致力于将想法变为现实，专注于网页设计与应用开发。",
+                "aboutNote": "<strong>注意：</strong> 我们目前不提供数字营销服务，也不接受外部订单，仅用于展示我们的作品和能力。",
+                "portfolioTitle": "作品集",
+                "portfolioContent": "暂无",
+                "contactTitle": "联系我们",
+                "contactContent": "如果您有任何疑问或合作意向，可以通过以下方式与我们联系：",
+                "contactEmail": "邮箱: tiantiane0616@126.com<br>官方唯一指定客服: QQ 3821852100<br><a href=''>加入我们(QQ面试群995627272)</a>[招收有想法的青少年开发者(10-16周岁)]",
+                "footerCopyright": "© 2024 小饿工作室. 版权所有.",
+                "langZh": "中文",
+                "langEn": "English"
+            },
+            "en": {
+                "headerTitle": "XiaoE WorkShop",
+                "headerSubtitle": "Youth Development Team",
+                "navAbout": "About Us",
+                "navPortfolio": "Portfolio",
+                "navContact": "Contact Us",
+                "aboutTitle": "About Us",
+                "aboutContent": "XiaoE WorkShop is a development team composed of passionate and creative teenagers. We are committed to turning ideas into reality, focusing on web design and application development.",
+                "aboutNote": "<strong>Note:</strong> We currently do not provide digital marketing services and do not accept external orders, only for displaying our work and capabilities.",
+                "portfolioTitle": "Portfolio",
+                "portfolioContent": "None",
+                "contactTitle": "Contact Us",
+                "contactContent": "If you have any questions or cooperation intentions, please contact us through the following methods:",
+                "contactEmail": "Email: tiantiane0616@126.com<br>Official Customer Service: QQ 3821852100<br><a href=''>Join Us (QQ Interview Group 995627272)</a>[Recruiting young developers with ideas (10-16 years old)]",
+                "footerCopyright": "© 2024 XiaoE WorkShop. All rights reserved.",
+                "langZh": "中文",
+                "langEn": "English"
+            }
+        };
+
+        // 获取按钮和内容元素
+        const langButtons = document.querySelectorAll('.language-switcher button');
+        const elements = document.querySelectorAll('[id]');
+
+        // 函数：切换语言
+        function switchLang(lang) {
+            // 更新按钮状态
+            langButtons.forEach(button => {
+                if (button.id === `lang-${lang}`) {
+                    button.classList.add('active');
+                } else {
+                    button.classList.remove('active');
+                }
+            });
+
+            // 更新内容
+            elements.forEach(el => {
+                const key = el.id;
+                if (langData[lang][key]) {
+                    el.innerHTML = langData[lang][key];
+                }
+            });
+        }
+
+        // 初始化语言
+        let currentLang = 'zh';
+        if (localStorage.getItem('lang')) {
+            currentLang = localStorage.getItem('lang');
+        }
+        switchLang(currentLang);
+
+        // 按钮点击事件
+        langButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.id === 'lang-zh' ? 'zh' : 'en';
+                switchLang(lang);
+                localStorage.setItem('lang', lang);
+            });
+        });
+    </script>
 
 </body>
 </html>
