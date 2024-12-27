@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小饿工作室 - 软件发布页</title>
+    <meta name="description" content="介绍小饿工作室最新发布的软件，包括功能、下载链接和更新日志。">
+    <!-- 内嵌CSS样式 -->
+    <style>
+        /* 基本样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* 背景图片 */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+
+        /* 头部 */
+        header {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        header .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        header p {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        /* 跳转到主页的按钮 */
+        .home-button,
+        .footer-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .home-button:hover,
+        .footer-link:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* 主内容 */
+        main {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 20px auto;
+            max-width: 1200px;
+            border-radius: 10px;
+        }
+
+        /* 各部分样式 */
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            margin-bottom: 20px;
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        /* 软件截图 */
+        .screenshot-gallery {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .screenshot-gallery img {
+            width: calc(50% - 10px);
+            height: auto;
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .screenshot-gallery img {
+                width: 100%;
+            }
+        }
+
+        /* 下载按钮 */
+        .download-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+
+        .download-button:hover {
+            background-color: #575757;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .home-button,
+            .footer-link {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景图片 -->
+    <div class="background">
+        <img src="images/background.jpg" alt="背景图片">
+    </div>
+
+    <!-- 头部 -->
+    <header>
+        <div class="container">
+            <img src="images/logo.png" alt="小饿工作室Logo" class="logo">
+            <h1>XXX 发布页</h1>
+            <p>最新版本：框架测试中</p>
+            <!-- 跳转到主页的按钮 -->
+            <a href="/index.html" class="home-button" aria-label="跳转到主页">返回主页</a>
+        </div>
+    </header>
+
+    <!-- 主内容 -->
+    <main>
+        <div class="container">
+            <!-- 软件简介 -->
+            <section id="introduction">
+                <h2>软件简介</h2>
+                <p>测试中</p>
+            </section>
+
+            <!-- 软件截图 -->
+            <section id="screenshots">
+                <h2>软件截图</h2>
+                <div class="screenshot-gallery">
+                    <img src="screenshot1.png" alt="软件截图1">
+                    <img src="screenshot2.png" alt="软件截图2">
+                    <!-- 可以添加更多截图 -->
+                </div>
+            </section>
+
+            <!-- 下载链接 -->
+            <section id="downloads">
+                <h2>Windwos下载链接(不提供)</h2>
+                <a href="software-v1.0.0.zip" class="download-button" download>下载 test-windwods-X</a>
+                <p>版本：v1.0.0 | 更新日期：2024年12月26日</p>
+                <h2>安卓下载链接</h2>
+                <a href="H5C0C39E1__test-1.0.apk" class="download-button" download>下载 test-android-01</a>
+                <p>版本：v1.0.0 | 更新日期：2024年12月26日</p>
+
+            </section>
+
+            <!-- 更新日志 -->
+            <section id="changelog">
+                <h2>更新日志</h2>
+                <ul>
+                    <li><strong>test-android-01</strong> - 2024年12月26日
+                        <ul>
+                            <li>初始测试版本发布</li>
+                            <li>框架测试</li>
+                        </ul>
+                    </li>
+                    <!-- 可以添加更多版本 -->
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 小饿工作室. 版权所有.<br>
+                页面由@天天饿喵Tiantiane 制作构建
+            </p>
+
+        </div>
+    </footer>
+
+    <!-- JavaScript代码 -->
+    <script>
+        // 如果有动态功能，可以在这里添加
+    </script>
+</body>
+</html>
