@@ -7,7 +7,7 @@
 - **项目名称**: 小饿工作室官网
 - **项目作者**: [天天饿Tiantiane（tiantiane0616@github）]
 - **托管平台**: [GitHub Pages](https://pages.github.com/)
-- **访问链接**: [https://xiaoews.github.io/](https://xiaoews.github.io/) *(请根据实际情况修改)*
+- **访问链接**: [https://xiaoews.github.io/](https://xiaoews.github.io/) 
 
 ## 项目功能
 
