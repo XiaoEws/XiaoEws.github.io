@@ -33,7 +33,21 @@
     <meta name="description" content="小饿工作室是一个由青少年组成的开发团队，专注于网页设计与应用开发。">
     <!-- CSS样式 -->
     <style>
-              /* 跳转按钮 */
+         /* 黑灰按钮样式 */
+        .software-item a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .software-item a:hover {
+            background-color: #575757;
+        }
+              /* 白黑跳转按钮 */
         .home-button,
         .footer-link {
             display: inline-block;
@@ -214,7 +228,7 @@
         <section id="portfolio">
             <h2 id="portfolio-title">作品集</h2>
             <p id="portfolio-content">暂无完成项目<br>
-                <a href="dev/index.html" class="home-button" aria-label="跳转">查看更多...(聚合发布页)</a>
+                <a href="dev/index.html" class="software-item" aria-label="跳转">查看更多...(聚合发布页)</a>
             </p>
             <!-- 添加更多作品 -->
         </section>
@@ -222,7 +236,7 @@
         <section id="114514">
             <h2 id="contact-title">加入我们</h2>
             <ul>
-                <a href="recruit/index.html" class="home-button" aria-label="跳转">查看招聘页面</a>
+                <a href="recruit/index.html" class="software-item" aria-label="跳转">查看招聘页面</a>
                 <br>
                 [招收有想法的青少年开发者(8-17周岁)]
 
