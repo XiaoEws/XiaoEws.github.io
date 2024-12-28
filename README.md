@@ -50,17 +50,17 @@
 文档改进: 完善项目文档，帮助其他开发者更好地理解和使用项目。
 贡献步骤
 1.
-Fork 本仓库。
+- Fork 本仓库。
 2.
-Clone 你自己的仓库到本地。
+- Clone 你自己的仓库到本地。
 3.
-创建分支: git checkout -b feature/你的功能名称
+- 创建分支: git checkout -b feature/你的功能名称
 4.
-提交更改: git commit -am '添加新功能'
+- 提交更改: git commit -am '添加新功能'
 5.
-推送分支: git push origin feature/你的功能名称
+- 推送分支: git push origin feature/你的功能名称
 6.
-创建拉取请求: 在 GitHub 上提交拉取请求，等待审核和合并。
+- 创建拉取请求: 在 GitHub 上提交拉取请求，等待审核和合并。
 联系方式
 如果你有任何疑问或建议，欢迎通过以下方式与我们联系：
 
