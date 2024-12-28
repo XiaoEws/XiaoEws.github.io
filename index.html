@@ -190,9 +190,14 @@
             <p id="contact-content">如果您有任何疑问或合作意向，可以通过以下方式与我们联系：</p>
             <ul>
                 <li id="contact-email">
-                    邮箱: tiantiane0616@126.com
+                    邮箱:<a href="mailto:tiantiane0616@126.com" class="apply-button"> tiantiane0616@126.com</a>
                     <br>
-                    官方唯一指定客服: QQ 3821852100
+                    官方唯一指定客服:<a href="https://tenapi.cn/v2/qq?qq=3821852100" class="apply-button">  QQ 3821852100</a>
+                    <br>
+                    官方快手
+                    <br> <a href="recruit/index.html">小饿工作室(XiaoEWorkShop)</a>
+                    官方贴吧
+                    <br> <a href="https://tieba.baidu.com/wxf/28154944?kw=%E5%B0%8F%E9%A5%BF%E5%B7%A5%E4%BD%9C%E5%AE%A4&fr=sharewise">小饿工作室吧</a>
                 </li>
                 <!-- 可以根据需要添加电话或地址 -->
             </ul>
@@ -205,89 +210,5 @@
     <footer>
         <p id="footer-copyright">&copy; 2024 小饿工作室. 版权所有.<br>页面由@天天饿喵Tiantiane 制作构建</p>
     </footer>
-
-    <!-- JavaScript代码 -->
-    <script type="text/javascript">
-        // 语言数据
-        const langData = {
-            "zh": {
-                "headerTitle": "小饿工作室",
-                "headerSubtitle": "青少年开发团队",
-                "navAbout": "关于我们",
-                "navPortfolio": "作品集",
-                "navContact": "联系我们",
-                "aboutTitle": "关于我们",
-                "aboutContent": "小饿工作室是一个由充满激情和创造力的青少年组成的开发团队。我们致力于将想法变为现实，专注于网页设计与应用开发。",
-                "aboutNote": "<strong>注意：</strong> 我们目前不提供数字营销服务，也不接受外部订单，仅用于展示我们的作品和能力。",
-                "portfolioTitle": "作品集",
-                "portfolioContent": "暂无",
-                "contactTitle": "联系我们",
-                "contactContent": "如果您有任何疑问或合作意向，可以通过以下方式与我们联系：",
-                "contactEmail": "邮箱: tiantiane0616@126.com<br>官方唯一指定客服: QQ 3821852100<br><a href=''>加入我们(QQ面试群995627272)</a>[招收有想法的青少年开发者(10-16周岁)]",
-                "footerCopyright": "© 2024 小饿工作室. 版权所有.",
-                "langZh": "中文",
-                "langEn": "English"
-            },
-            "en": {
-                "headerTitle": "XiaoE WorkShop",
-                "headerSubtitle": "Youth Development Team",
-                "navAbout": "About Us",
-                "navPortfolio": "Portfolio",
-                "navContact": "Contact Us",
-                "aboutTitle": "About Us",
-                "aboutContent": "XiaoE WorkShop is a development team composed of passionate and creative teenagers. We are committed to turning ideas into reality, focusing on web design and application development.",
-                "aboutNote": "<strong>Note:</strong> We currently do not provide digital marketing services and do not accept external orders, only for displaying our work and capabilities.",
-                "portfolioTitle": "Portfolio",
-                "portfolioContent": "None",
-                "contactTitle": "Contact Us",
-                "contactContent": "If you have any questions or cooperation intentions, please contact us through the following methods:",
-                "contactEmail": "Email: tiantiane0616@126.com<br>Official Customer Service: QQ 3821852100<br><a href=''>Join Us (QQ Interview Group 995627272)</a>[Recruiting young developers with ideas (10-16 years old)]",
-                "footerCopyright": "© 2024 XiaoE WorkShop. All rights reserved.",
-                "langZh": "中文",
-                "langEn": "English"
-            }
-        };
-
-        // 获取按钮和内容元素
-        const langButtons = document.querySelectorAll('.language-switcher button');
-        const elements = document.querySelectorAll('[id]');
-
-        // 函数：切换语言
-        function switchLang(lang) {
-            // 更新按钮状态
-            langButtons.forEach(button => {
-                if (button.id === `lang-${lang}`) {
-                    button.classList.add('active');
-                } else {
-                    button.classList.remove('active');
-                }
-            });
-
-            // 更新内容
-            elements.forEach(el => {
-                const key = el.id;
-                if (langData[lang][key]) {
-                    el.innerHTML = langData[lang][key];
-                }
-            });
-        }
-
-        // 初始化语言
-        let currentLang = 'zh';
-        if (localStorage.getItem('lang')) {
-            currentLang = localStorage.getItem('lang');
-        }
-        switchLang(currentLang);
-
-        // 按钮点击事件
-        langButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const lang = button.id === 'lang-zh' ? 'zh' : 'en';
-                switchLang(lang);
-                localStorage.setItem('lang', lang);
-            });
-        });
-    </script>
-
 </body>
 </html>
