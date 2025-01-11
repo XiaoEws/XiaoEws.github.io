@@ -61,6 +61,7 @@
 - 邮箱: tiantiane0616@126.com
 - QQ: 3821852100
 - 快手: [小饿工作室](https://v.kuaishou.com/a9s54K)
+- 抖音: [小饿工作室](https://v.douyin.com/iyGJEqBK/)
 - 贴吧：[小饿工作室吧](https://tieba.baidu.com/wxf/28154944?kw=%E5%B0%8F%E9%A5%BF%E5%B7%A5%E4%BD%9C%E5%AE%A4&fr=sharewise)
 - 加入我们: [QQ 群 995627272](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272)
 - 版权声明 © 2024 小饿工作室. 版权所有.
