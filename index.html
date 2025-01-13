@@ -22,75 +22,20 @@
 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-    <!-- 广告与SEO -->
-    <meta name="sogou_site_verification" content="51n82d5JfD" />
-    <meta name="360-site-verification" content="a01fba1451da9277d22f3eb396f05c8c" />
-    <meta name="baidu-site-verification" content="codeva-S8fKWWmFGO" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1391624694281614"
-        crossorigin="anonymous"></script>
-    <meta name="google-site-verification" content="yT_H9njSVW3VI1B-o8XFMF4ubN-MBF22rxzPjAsAGwY" />
-    <meta name="msvalidate.01" content="29343BB7EF199208B8014C4419514EEC" />
-    <!-- 广告与SEO -->
-
     <meta charset="UTF-8">
     <link rel="icon" href="logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小饿工作室 - XiaoE_WorkShop</title>
     <meta name="description" content="小饿工作室是一个由青少年组成的开发团队，专注于网页设计与应用开发。">
+    
+    <!-- 广告与SEO -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1391624694281614" crossorigin="anonymous"></script>
+    <meta name="google-site-verification" content="yT_H9njSVW3VI1B-o8XFMF4ubN-MBF22rxzPjAsAGwY" />
+    <meta name="msvalidate.01" content="29343BB7EF199208B8014C4419514EEC" />
+
     <!-- CSS样式 -->
     <style>
-        /* 黑灰白跳转按钮 */
-        .download-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #333;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            transition: background-color 0.3s;
-        }
-
-        .download-button:hover {
-            background-color: #575757;
-        }
-
-        /* 黑灰按钮样式 */
-        .software-item a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .software-item a:hover {
-            background-color: #575757;
-        }
-
-        /* 白黑跳转按钮 */
-        .home-button,
-        .footer-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #fff;
-            color: #333;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .home-button:hover,
-        .footer-link:hover {
-            background-color: #333;
-            color: #fff;
-        }
-
         /* 基本样式重置 */
         * {
             margin: 0;
@@ -105,26 +50,30 @@
             background-color: #f4f4f4;
         }
 
-        /* 语言切换按钮样式 */
-        .language-switcher {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            z-index: 1000;
-        }
-
-        .language-switcher button {
-            padding: 5px 10px;
-            margin-left: 5px;
-            border: none;
-            background-color: #444;
+        /* 公共按钮样式 */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
             color: #fff;
-            cursor: pointer;
-            border-radius: 3px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
-        .language-switcher button.active {
+        .button.white {
+            background-color: #fff;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button:hover {
             background-color: #575757;
+        }
+
+        .button.white:hover {
+            background-color: #333;
+            color: #fff;
         }
 
         /* 头部样式 */
@@ -167,7 +116,6 @@
             padding: 20px;
             max-width: 1200px;
             margin: 60px auto 20px auto;
-            /* 为语言切换按钮留出空间 */
             background-color: #fff;
         }
 
@@ -204,27 +152,10 @@
                 float: none;
                 width: 100%;
             }
-
-            .language-switcher {
-                top: 5px;
-                right: 5px;
-            }
-
-            .language-switcher button {
-                padding: 3px 8px;
-                font-size: 14px;
-            }
         }
     </style>
 </head>
-
 <body>
-
-    <!-- 语言切换按钮 -->
-    <div class="language-switcher">
-        <button id="lang-zh" class="active">中文</button>
-        <button id="lang-en">English</button>
-    </div>
 
     <!-- 头部 -->
     <header>
@@ -234,13 +165,13 @@
 
     <!-- 导航栏 -->
     <nav>
-        <a href="#about" id="1145141919810">关于我们</a>
-        <a href="#wqx" id="1145141919810">H5活动列表</a>
-        <a href="#portfolio" id="1145141919810">作品集</a>
-        <a href="#114514" id="1145141919810">加入我们</a>
-        <a href="#101207" id="1145141919810">赞助链接</a>
-        <a href="#1314" id="1145141919810">联系我们</a>
-        <a href="#520" id="1145141919810">友情链接</a>
+        <a href="#about">关于我们</a>
+        <a href="#wqx">H5活动列表</a>
+        <a href="#portfolio">作品集</a>
+        <a href="#join-us">加入我们</a>
+        <a href="#donate">赞助链接</a>
+        <a href="#contact">联系我们</a>
+        <a href="#links">友情链接</a>
     </nav>
 
     <!-- 主内容 -->
@@ -253,117 +184,63 @@
             <p id="about-note"><strong>注意：</strong> 我们目前不提供数字营销服务，也不接受外部订单，仅用于展示我们的作品和能力。</p>
             <p>主站(国际github): <a href="https://xiaoews.github.io" target="_blank">xiaoews.github.io</a></p>
             <p>备用1(香港): <a href="http://xiaoews.hppro1.hpnu.cn" target="_blank">xiaoews.hppro1.hpnu.cn</a></p>
-            <p>备用2(高防备用): <a href="http://xiaoews.back1.idcfengye.com" target="_blank">xiaoews.back1.idcfengye.com</a>
-            </p>
-          <h5> <br>
-            <p id="about-note">
-              <strong>提醒：</strong> 
-              最新信息以主站<a href="https://xiaoews.github.io" target="_blank">xiaoews.github.io
-              </a>
-              为准<br>
-              本站点最后一次更新为2025.01.12<br>
-          </p>
-          </h5>
+            <p>备用2(高防备用): <a href="http://xiaoews.back1.idcfengye.com" target="_blank">xiaoews.back1.idcfengye.com</a></p>
+            <p id="about-note"><strong>提醒：</strong> 最新信息以主站<a href="https://xiaoews.github.io" target="_blank">xiaoews.github.io</a>为准<br>本站点最后一次更新为2025.01.12</p>
         </section>
 
         <!-- 活动 -->
         <section id="wqx">
             <h2 id="about-title">H5活动列表</h2>
-            <p id="about-content">
-                <a href="https://xiaoews.github.io/XiaoENewYearPage/" class="download-button"
-                    aria-label="跳转">跨年网页(XiaoENewYearPage)</a>
-            </p>
-        </section><br>
+            <p><a href="https://xiaoews.github.io/XiaoENewYearPage/" class="button" aria-label="跳转">跨年网页(XiaoENewYearPage)</a></p>
+        </section>
 
         <!-- 作品集 -->
         <section id="portfolio">
             <h2 id="portfolio-title">作品集</h2>
-            <p id="portfolio-content">暂无完成项目<br>
-                <a href="dev/index.html" class="download-button" aria-label="跳转">查看更多...(聚合发布页)</a>
-            </p>
-            <!-- 添加更多作品 -->
+            <p>暂无完成项目<br><a href="dev/index.html" class="button" aria-label="跳转">查看更多...(聚合发布页)</a></p>
         </section>
 
-        <section id="114514">
+        <!-- 加入我们 -->
+        <section id="join-us">
             <h2 id="contact-title">加入我们</h2>
             <ul>
-                <a href="recruit/index.html" class="download-button" aria-label="跳转">查看招聘页面</a>
-                <br>
-                [招收有想法的青少年开发者(8-17周岁)]
-
-            </ul><br>
+                <a href="member/index.html" class="button" aria-label="跳转">成员名单</a>
+                <a href="recruit/index.html" class="button" aria-label="跳转">查看招聘页面</a>
+                <li>[招收有想法的青少年开发者(8-17周岁)]</li>
+            </ul>
         </section>
 
-        <!--赞助链接 -->
-        <section id="101207">
+        <!-- 赞助链接 -->
+        <section id="donate">
             <h2 id="about-title">赞助链接</h2>
-            <p id="contact-content">
-                迫于青少年无工作能力，为了维持项目基础支出，迫不得已添加广告回血，如愿意为我们提供帮助请使用如下链接支持，您单次捐助10元一上会写入赞助者名单(需要备注昵称或联系信息等等，否者默认收款方可查看的付款方名额)：
-            </p>
-            <p id="about-content">
-                <a href="https://tool.guliucang.com/o/universal_pay_view/?data=eyJxcSI6Imh0dHBzOi8vaS5xaWFuYmFvLnFxLmNvbS93YWxsZXQvc3FyY29kZS5odG0%2FbT10ZW5wYXkmZj13YWxsZXQmYT0xJnU9NTM2NzA2MTY0Jm49JUU1JUE0JUE5JUU1JUE0JUE5JUU5JUE1JUJGJUUyJTgxJUE3JUUyJTgxJUE3JTdFJUU1JTk2JUI1JUUyJTgxJUE3JUUyJTgwJUFEKyZhYz1DQUVROVBqMV93RVlrY1RDdWdZeURPUzRxdVM2dXVla3Z1UzZwRGdCUWlCbFl6UTBaV1l6T0dVeE56VXhaamMzTVRKaU1EazNaVGxpWmpRNU16Vm1OUSUzRCUzRF94eHhfc2lnbiIsIndlaXhpbiI6Ind4cDovL2YyZjBxNktPbnNXN1NIMnVteVZqTDhXbkR1VHExVHVuWDZOVlljMHBYWDJzY1NUV3lwaGI5ZEdoZEw1aUpaOWJ3LWNnIiwiYWxpcGF5IjoiaHR0cHM6Ly9xci5hbGlwYXkuY29tL2ZreDE2MjQzYXZtdmt6cjhrbWxjajViIn0%3D"
-                    class="download-button" aria-label="跳转">收款链接(QQ/WX/ZFB)</a>
-            </p><br>
-            <p id="about-content">
-                <a href="/donor/index.html" class="download-button" aria-label="跳转">捐赠者鸣谢名单</a>
-            </p>
-        </section><br>
+            <p>迫于青少年无工作能力，为了维持项目基础支出，迫不得已添加广告回血，如愿意为我们提供帮助请使用如下链接支持，您单次捐助10元一上会写入赞助者名单(需要备注昵称或联系信息等等，否者默认收款方可查看的付款方名额)：
+</p><a href="https://tool.guliucang.com/o/universal_pay_view/?data=..." class="button" aria-label="跳转">收款链接(QQ/WX/ZFB)</a>
+<a href="/donor/index.html" class="button" aria-label="跳转">捐赠者鸣谢名单</a>
+        </section>
 
         <!-- 联系我们 -->
-        <section id="1314">
+        <section id="contact">
             <h2 id="contact-title">联系我们</h2>
             <p id="contact-content">如果您有任何疑问或合作意向，可以通过以下方式与我们联系：</p>
             <ul>
-                <li id="contact-email">
-                    邮箱:<a href="mailto:tiantiane0616@126.com" class="apply-button"> tiantiane0616@126.com</a>
-                </li>
-                <li>
-                    官方唯一指定客服:<a
-                        href="https://admin.qidian.qq.com/static_proxy/b2b-qq/wpa-link/index.html#/person?uin=3821852100"
-                        class="apply-button"> QQ 3821852100</a>
-                </li>
-
-                <li>
-                    官方快手
-                    <a href="https://v.kuaishou.com/a9s54K">小饿工作室(XiaoEWorkShop)</a>
-                </li>
-
-                <li>
-                    官方抖音
-                    <a href="https://v.douyin.com/iyGJEqBK/">小饿工作室(XiaoEWorkShop)</a>
-                    <br>
-                </li>
-
-                <li>
-                    官方贴吧
-                    <a
-                        href="https://tieba.baidu.com/wxf/28154944?kw=%E5%B0%8F%E9%A5%BF%E5%B7%A5%E4%BD%9C%E5%AE%A4&fr=sharewise">小饿工作室吧</a>
-                    <br>
-                </li>
-
-                <!-- 可以根据需要添加电话或地址 -->
-                </p>
-        </section><br>
-        <!--赞助链接 -->
-        <section id="520">
-            <h2 id="about-title">友情链接</h2>
-            <p id="about-content">
-                <a
-                    href="https://tool.guliucang.com/o/universal_pay_view/?data=eyJxcSI6Imh0dHBzOi8vaS5xaWFuYmFvLnFxLmNvbS93YWxsZXQvc3FyY29kZS5odG0%2FbT10ZW5wYXkmZj13YWxsZXQmYT0xJnU9NTM2NzA2MTY0Jm49JUU1JUE0JUE5JUU1JUE0JUE5JUU5JUE1JUJGJUUyJTgxJUE3JUUyJTgxJUE3JTdFJUU1JTk2JUI1JUUyJTgxJUE3JUUyJTgwJUFEKyZhYz1DQUVROVBqMV93RVlrY1RDdWdZeURPUzRxdVM2dXVla3Z1UzZwRGdCUWlCbFl6UTBaV1l6T0dVeE56VXhaamMzTVRKaU1EazNaVGxpWmpRNU16Vm1OUSUzRCUzRF94eHhfc2lnbiIsIndlaXhpbiI6Ind4cDovL2YyZjBxNktPbnNXN1NIMnVteVZqTDhXbkR1VHExVHVuWDZOVlljMHBYWDJzY1NUV3lwaGI5ZEdoZEw1aUpaOWJ3LWNnIiwiYWxpcGF5IjoiaHR0cHM6Ly9xci5hbGlwYXkuY29tL2ZreDE2MjQzYXZtdmt6cjhrbWxjajViIn0%3D">赞助链接(QQ/WX/ZFB)</a>
-                <br>
-                <a href="https://tiantiane0616.github.io/index.html">作者个人网站页面</a>
-            </p>
+                <li id="contact-email">邮箱:<a href="mailto:tiantiane0616@126.com"> tiantiane0616@126.com</a></li>
+                <li>官方唯一指定客服:<a href="https://admin.qidian.qq.com/static_proxy/b2b-qq/wpa-link/index.html#/person?uin=3821852100"> QQ 3821852100</a></li>
+                <li>官方快手 <a href="https://v.kuaishou.com/a9s54K">小饿工作室(XiaoEWorkShop)</a></li>
+                <li>官方抖音 <a href="https://v.douyin.com/iyGJEqBK/">小饿工作室(XiaoEWorkShop)</a></li>
+                <li>官方贴吧 <a href="https://tieba.baidu.com/wxf/28154944?kw=%E5%B0%8F%E9%A5%BF%E5%B7%A5%E4%BD%9C%E5%AE%A4&fr=sharewise">小饿工作室吧</a></li>
+            </ul>
         </section>
-        <br>
-        <br>
-        <br>
-        <br>
-        <a href="/index.html">刷新页面</a>
+
+        <!-- 友情链接 -->
+        <section id="links">
+            <h2 id="about-title">友情链接</h2>
+            <p><a href="https://tiantiane0616.github.io/index.html">作者个人网站页面</a></p>
+        </section>
     </div>
+
     <!-- 页脚 -->
     <footer>
         <p id="footer-copyright">&copy; 2024 小饿工作室. 版权所有.<br>页面由@天天饿喵Tiantiane 制作构建</p>
     </footer>
 </body>
-
 </html>
