@@ -175,11 +175,51 @@
             }
 
             .member-item {
-                width: 80%;
+                width: 100%;
+            }
+
+            .member-item.member-large,
+            .member-item.member-wide {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .member-item.member-large img,
+            .member-item.member-wide img {
+                margin-right: 0;
+                margin-bottom: 15px;
             }
 
             header h1 {
                 font-size: 1.5em;
+            }
+
+            .member-item h3,
+            .member-item h4,
+            .member-item h5 {
+                font-size: 1.2em;
+            }
+
+            .member-item p {
+                font-size: 0.9em;
+            }
+
+            /* 小屏幕时，除了天天饿和风千续外，改为双列或三列布局 */
+            .member-item:not(.member-large):not(.member-wide) {
+                width: calc(50% - 20px); /* 双列布局 */
+            }
+
+            @media (max-width: 500px) {
+                .member-item:not(.member-large):not(.member-wide) {
+                    width: calc(100% - 20px); /* 单列布局 */
+                }
+            }
+
+            @media (min-width: 501px) and (max-width: 768px) {
+                .member-item:not(.member-large):not(.member-wide) {
+                    width: calc(33.33% - 20px); /* 三列布局 */
+                }
             }
         }
     </style>
