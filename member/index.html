@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小饿工作室 - 团队成员展示</title>
+    <meta name="description" content="展示小饿工作室(XiaoEWorkShop)的团队成员信息">
+    <!-- 内嵌CSS样式 -->
+    <style>
+        /* 基本样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* 跳转按钮 */
+        .home-button,
+        .footer-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .home-button:hover,
+        .footer-link:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* 背景图片 */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+
+        /* 头部 */
+        header {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        header p {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        /* 主内容 */
+        main {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 20px auto;
+            max-width: 1200px;
+            border-radius: 10px;
+        }
+
+        /* 成员列表 */
+        .member-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .member-item {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .member-item.member-large {
+            width: 515px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .member-item.member-wide {
+            width: 1060px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+            border: 5px solid rgba(0, 0, 0, 0.3);
+        }
+
+        .member-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .member-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .member-item.member-large img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            flex-shrink: 0;
+            max-width: 300px;
+            max-height: 300px;
+        }
+
+        .member-item h3,
+        .member-item h4,
+        .member-item h5 {
+            margin-bottom: 5px;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .member-item p {
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .member-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .member-item {
+                width: 80%;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 背景图片 -->
+    <div class="background">
+        <img src="images/background.jpg" alt="背景图片">
+    </div>
+
+    <!-- 头部 -->
+    <header>
+        <h1>团队成员展示</h1>
+        <a href="/index.html" class="home-button" aria-label="跳转到主页">返回主页</a>
+    </header>
+
+    <!-- 主内容 -->
+    <main>
+        <div class="member-list">
+            <!-- A -->
+            <div class="member-item member-large">
+                <img src="member1.jpg" alt="天天饿喵Tiantiane">
+                <div>
+                    <h3>天天饿喵Tiantiane</h3>
+                    <p>职位：室长(全职)</p>
+                    <p>年龄：13</p>
+                    <p>加入时间：2024年12月22日</p>
+                    <p>姓名: 于承萧(ChengXiao Yu)</p>
+                    <p>商务邮箱：3821852100@qq.com</p>
+                    <p>联系方式：tiantiane0616@126.com</p>
+                </div>
+            </div>
+            <div class="member-item member-large">
+                <img src="member5.jpg" alt="风千续">
+                <div>
+                    <h3>风千续</h3>
+                    <p>职位：代理室长</p>
+                    <p>年龄：15</p>
+                    <p>加入时间：2024年12月22日</p>
+                    <p>姓名: 胡远甲(YuanJia Hu)</p>
+                    <p>商务邮箱：3095247595@qq.com</p>
+                </div>
+            </div>
+
+            <div class="member-item">
+                <img src="member2.jpg" alt="咔咔">
+                <h3>咔咔</h3>
+                <p>职位：美术部长</p>
+                <p>年龄：16</p>
+                <p>加入时间：2024年12月22日</p>
+                <p>联系方式：</p>
+            </div>
+
+            <div class="member-item">
+                <img src="member3.jpg" alt="倬淮">
+                <h3>倬淮</h3>
+                <p>职位：音乐部长</p>
+                <p>年龄：13</p>
+                <p>加入时间：2024年12月22日</p>
+                <p>联系方式：</p>
+            </div>
+
+            <div class="member-item">
+                <img src="member4.jpg" alt="多bug的哮天犬">
+                <h3>多bug的哮天犬</h3>
+                <p>职位：开发部长</p>
+                <p>年龄：15</p>
+                <p>加入时间：2024年12月22日</p>
+                <p>联系方式：</p>
+            </div>
+            <div class="member-item">
+                <img src="member6.jpg" alt="暂无">
+                <h3>暂无</h3>
+                <p>职位：创作部长</p>
+                <p>年龄：</p>
+                <p>加入时间：</p>
+                <p>联系方式：</p>
+            </div>
+            <!-- B -->
+            <div class="member-item">
+                <h3>临终遇</h3>
+                <p>职位：美术副部长</p>
+                <p>加入时间：2025年1月3日</p>
+                <p>联系方式：</p>
+            </div>
+            <div class="member-item">
+                <h3>荷花</h3>
+                <p>职位：美术副部长</p>
+                <p>加入时间：2025年12月29日</p>
+                <p>联系方式：</p>
+            </div>
+            <div class="member-item">
+                <h3>卡布叻—鹿茸</h3>
+                <p>职位：音乐副部长</p>
+                <p>加入时间：2024年12月22日</p>
+                <p>联系方式：</p>
+            </div>
+            <div class="member-item">
+                <h3>小叶子</h3>
+                <p>职位：男娘部部长</p>
+                <p>加入时间：2024年12月29日</p>
+                <p>联系方式：</p>
+            </div>
+
+            <!-- C -->
+            <div class="member-item">
+                <h4>皇帝</h4>
+                <p>职位：管理</p>
+            </div>
+            <div class="member-item">
+                <h4>小鲨鲨哟</h4>
+                <p>职位：管理</p>
+            </div>
+            <div class="member-item">
+                <h4>赫鲁晓夫</h4>
+                <p>职位：管理</p>
+            </div>
+            <div class="member-item">
+                <h4>蓝色的凳子</h4>
+                <p>职位：管理</p>
+            </div>
+            <div class="member-item">
+                <h4>唉</h4>
+                <p>职位：管理</p>
+            </div>
+            <div class="member-item">
+                <h4>黑土</h4>
+                <p>职位：开发</p>
+            </div>
+            <div class="member-item">
+                <h4>歌鸲和他的莺莺</h4>
+                <p>职位：开发</p>
+            </div>
+            <div class="member-item">
+                <h4>半调子地球牢尸</h4>
+                <p>职位：开发</p>
+            </div>
+            <div class="member-item">
+                <h4>cpt32</h4>
+                <p>职位：开发</p>
+            </div>
+            <div class="member-item">
+                <h4>咸鱼</h4>
+                <p>职位：开发</p>
+            </div>
+            <div class="member-item">
+                <h4>铁组</h4>
+                <p>职位：开发</p>
+            </div>
+            <div class="member-item">
+                <h4>棒棒糖</h4>
+                <p>职位：创作</p>
+            </div>
+            <div class="member-item">
+                <h4>沈梦</h4>
+                <p>职位：创作</p>
+            </div>
+            <div class="member-item">
+                <h4>终末之诗</h4>
+                <p>职位：创作</p>
+            </div>
+            <div class="member-item">
+                <h4>薄荷</h4>
+                <p>职位：创作</p>
+            </div>
+            <div class="member-item">
+                <h4>咕噜咕噜</h4>
+                <p>职位：创作</p>
+            </div>
+            <div class="member-item">
+                <h4>fish🐟</h4>
+                <p>职位：美术</p>
+            </div>
+            <div class="member-item">
+                <h4>焚乐</h4>
+                <p>职位：美术</p>
+            </div>
+            <div class="member-item">
+                <h4>小胖龟UvU</h4>
+                <p>职位：美术</p>
+            </div>
+            <div class="member-item">
+                <h4>小雨</h4>
+                <p>职位：美术</p>
+            </div>
+            <div class="member-item">
+                <h4>风曦</h4>
+                <p>职位：美术(实习)</p>
+            </div>
+            <div class="member-item">
+                <h4>兰桉.w</h4>
+                <p>职位：音乐</p>
+            </div>
+            <!-- D -->
+            <div class="member-item member-wide">
+                <div>
+                    <h3>已离职成员表单</h3>
+                </div>
+            </div>
+            <div class="member-item">
+                <h5>未.(美术)</h5>
+            </div>
+            <div class="member-item">
+                <h5>白子(创作)</h5>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2024 小饿工作室. 版权所有.<br>页面由@天天饿喵Tiantiane 制作构建</p>
+    </footer>
+</body>
+
+</html>
