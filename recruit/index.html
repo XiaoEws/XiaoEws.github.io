@@ -3,32 +3,15 @@
 
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1391624694281614"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小饿工作室 - 招聘页面</title>
     <meta name="description" content="加入小饿工作室，一起创造未来！我们正在招聘有才华的青少年开发者。">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1391624694281614" crossorigin="anonymous"></script>
 
     <!-- 内嵌CSS样式 -->
     <style>
-                    /* 跳转按钮 */
-        .home-button,
-        .footer-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #fff;
-            color: #333;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .home-button:hover,
-        .footer-link:hover {
-            background-color: #333;
-            color: #fff;
-        }
         /* 基本样式重置 */
         * {
             margin: 0;
@@ -71,12 +54,6 @@
             position: relative;
         }
 
-        header .logo {
-            width: 100px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
         header h1 {
             margin-bottom: 10px;
             font-size: 2em;
@@ -85,6 +62,24 @@
         header p {
             font-style: italic;
             margin-bottom: 10px;
+        }
+
+        .home-button,
+        .footer-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .home-button:hover,
+        .footer-link:hover {
+            background-color: #333;
+            color: #fff;
         }
 
         /* 主内容 */
@@ -141,7 +136,8 @@
             transition: background-color 0.3s;
         }
 
-        .job-item a:hover {
+        .job-item a:hover,
+        .apply-button:hover {
             background-color: #575757;
         }
 
@@ -222,11 +218,9 @@
 
     <!-- 头部 -->
     <header>
-        <div class="container">
-            <h1>加入我们</h1>
-            <p>一起创造未来！</p>
-            <a href="/index.html" class="home-button" aria-label="跳转到主页">返回主页</a>
-        </div>
+        <h1>加入我们</h1>
+        <p>一起创造未来！</p>
+        <a href="/index.html" class="home-button" aria-label="跳转到主页">返回主页</a>
     </header>
 
     <!-- 主内容 -->
@@ -249,33 +243,33 @@
                     <a href="#designer" aria-label="查看UI/UX设计师职位详情">查看详情</a>
                 </div>
 
-
                 <!-- 职位3 -->
                 <div class="job-item">
                     <h2>美术绘制</h2>
                     <p>绘制精美和谐与对应主题的插画</p>
-                    <a href="#3" aria-label="查看美术职位详情">查看详情</a>
+                    <a href="#artist" aria-label="查看美术职位详情">查看详情</a>
                 </div>
+
                 <!-- 职位4 -->
                 <div class="job-item">
                     <h2>音乐</h2>
                     <p>音乐工程设计实现</p>
-                    <a href="#4" aria-label="查看音乐职位详情">查看详情</a>
+                    <a href="#music" aria-label="查看音乐职位详情">查看详情</a>
                 </div>
+
                 <!-- 职位5 -->
                 <div class="job-item">
                     <h2>摸鱼</h2>
                     <p>摸鱼聊天/策划</p>
-                    <a href="#5" aria-label="查看摸鱼职位详情">查看详情</a>
+                    <a href="#idle" aria-label="查看摸鱼职位详情">查看详情</a>
                 </div>
-                <!-- 可以添加更多职位 -->
-                                 <!-- 职位5 -->
+
+                <!-- 职位6 -->
                 <div class="job-item">
                     <h2>其它</h2>
                     <p>阿巴阿巴阿巴</p>
-                    <a href="#6" aria-label="查看其它职位详情">查看详情</a>
+                    <a href="#other" aria-label="查看其它职位详情">查看详情</a>
                 </div>
-                <!-- 可以添加更多职位 -->
             </div>
 
             <!-- 职位描述 -->
@@ -295,7 +289,7 @@
                     <li>良好的团队合作精神</li>
                 </ul>
                 <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272"
-                    class="apply-button" aria-label="申请青少年开发者职位">申请职位</a>
+                    aria-label="申请青少年开发者职位">申请职位</a>
             </div>
 
             <div class="job-description" id="designer">
@@ -313,10 +307,11 @@
                     <li>熟悉设计工具（如Adobe XD, Sketch, Figma）</li>
                     <li>良好的沟通和协作能力</li>
                 </ul>
-                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272 class="
-                    apply-button" aria-label="申请UI/UX设计师职位">申请职位</a>
+                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272"
+                    aria-label="申请UI/UX设计师职位">申请职位</a>
             </div>
-            <div class="job-description" id="3">
+
+            <div class="job-description" id="artist">
                 <h2>美术职位描述</h2>
                 <ul>
                     <li>负责游戏、应用程序或网站中的美术资源设计，包括角色、场景、UI元素等</li>
@@ -330,12 +325,13 @@
                     <li>年龄8-17周岁</li>
                     <li>会画画就行</li>
                     <li>最好熟悉设计工具（如Adobe XD, Sketch, Figma）</li>
-                    <li>最好良好的沟通和协作能力</li>>
+                    <li>最好良好的沟通和协作能力</li>
                 </ul>
-                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272 class="
-                    apply-button" aria-label="申请UI/UX设计师职位">申请职位</a>
+                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272"
+                    aria-label="申请美术职位">申请职位</a>
             </div>
-            <div class="job-description" id="4">
+
+            <div class="job-description" id="music">
                 <h2>音乐职位描述</h2>
                 <h3>音频工程师职位描述</h3>
                 <ul>
@@ -352,26 +348,9 @@
                     <li>最好熟练使用音频编辑软件，如 Pro Tools、Adobe Audition、Cubase 等</li>
                     <li>最好具备良好的听觉感知能力和音频处理技巧</li>
                     <li>有相关工作经验或项目经验者优先</li>
-
                 </ul>
-                <h3>音乐制作人职位描述</h2>
-                    <ul>
-                        <li>最好创作和制作原创音乐，包括作曲、编曲和混音</li>
-                        <li>最好与艺术家、词曲作者和其他音乐专业人士合作，确保音乐作品的质量和创意</li>
-                        <li>最好使用数字音频工作站（DAW）进行音乐制作，如 Ableton Live、Logic Pro、FL Studio 等</li>
-                        <li>最好根据项目需求，调整和优化音乐作品</li>
-                        <li>最好参与音乐项目的策划和执行，从概念到最终成品</li>
-                    </ul>
-                    <p><strong>要求：</strong></p>
-                    <ul>
-                        <li>年龄10-17周岁，具备相关经验和技能</li>
-                        <li>熟悉音乐理论和作曲技巧</li>
-                        <li>最好熟练使用至少一种数字音频工作站（DAW）</li>
-                        <li>最好具备良好的音乐感知能力和创意</li>
-                        <li>有相关作品集或项目经验者优先</li>
-                    </ul>
-                    <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272 class="
-                        apply-button" aria-label="申请音乐职位">申请职位</a>
+                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272 class="
+                    aria-label="申请音乐职位">申请职位</a>
             </div>
             <div class="job-description" id="5">
                 <h2>摸鱼职位描述</h2>
@@ -385,7 +364,7 @@
                     <li>良好友善的沟通能力</li>
                 </ul>
                 <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272 class="
-                    apply-button" aria-label="申请摸鱼职位">申请职位</a>
+                    aria-label="申请摸鱼职位">申请职位</a>
             </div>
 
             <!-- 申请方式 -->
@@ -397,7 +376,6 @@
                 <p>备选:请将您的简历和作品集发送至 <a href="mailto:tiantiane0616@126.com">tiantiane0616@126.com</a>，邮件标题注明“申请职位：XXX”。
                 </p>
                 <p>我们期待您的加入！</p>
-                            <br> <br><p><a href="/index.html">返回主页</a></p>
             </div>
         </div>
     </main>
