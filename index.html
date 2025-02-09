@@ -34,123 +34,196 @@
     <meta name="google-site-verification" content="yT_H9njSVW3VI1B-o8XFMF4ubN-MBF22rxzPjAsAGwY" />
     <meta name="msvalidate.01" content="29343BB7EF199208B8014C4419514EEC" />
 
+    <!-- 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <!-- CSS样式 -->
     <style>
-        /* 基本样式重置 */
+        :root {
+            --primary-color: #2A5CAA;
+            --secondary-color: #3B82F6;
+            --accent-color: #10B981;
+            --dark-color: #1F2937;
+            --light-color: #F9FAFB;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            transition: all 0.3s ease;
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
+            color: var(--dark-color);
+            background: var(--light-color);
         }
 
-        /* 公共按钮样式 */
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .button.white {
-            background-color: #fff;
-            color: #333;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .button:hover {
-            background-color: #575757;
-        }
-
-        .button.white:hover {
-            background-color: #333;
-            color: #fff;
-        }
-
-        /* 头部样式 */
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 1rem;
             text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
-            margin-bottom: 10px;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        header p {
-            font-style: italic;
-        }
-
-        /* 导航栏 */
         nav {
-            background-color: #444;
-            overflow: hidden;
+            background: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         nav a {
-            float: left;
-            display: block;
-            color: #fff;
-            text-align: center;
-            padding: 14px 20px;
+            color: var(--dark-color);
+            padding: 1rem 1.5rem;
             text-decoration: none;
+            position: relative;
+            font-weight: 500;
         }
 
         nav a:hover {
-            background-color: #575757;
+            color: var(--primary-color);
         }
 
-        /* 主内容区域 */
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: all 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 70%;
+            left: 15%;
+        }
+
         .container {
-            padding: 20px;
             max-width: 1200px;
-            margin: 60px auto 20px auto;
-            background-color: #fff;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
 
-        /* 关于我们 */
-        #about {
-            margin-bottom: 40px;
+        section {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.6s ease-out forwards;
         }
 
-        /* 作品集 */
-        #portfolio {
-            margin-bottom: 40px;
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
         }
 
-        .portfolio-item {
-            margin-bottom: 20px;
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: transform 0.2s;
         }
 
-        /* 联系我们 */
-        #contact {
-            margin-bottom: 40px;
+        .button.primary {
+            background: var(--primary-color);
+            color: white;
         }
 
-        /* 页脚 */
+        .button.secondary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--light-color);
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
         footer {
-            background-color: #333;
-            color: #fff;
+            background: var(--dark-color);
+            color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
         }
 
-        /* 响应式设计 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         @media (max-width: 768px) {
+            nav {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                justify-content: flex-start;
+            }
+
             nav a {
-                float: none;
+                font-size: 0.9rem;
+                padding: 1rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section {
+                padding: 1.5rem;
+            }
+            
+            .button {
                 width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -159,8 +232,8 @@
 
     <!-- 头部 -->
     <header>
-        <h1 id="header-title">小饿工作室</h1>
-        <p id="header-subtitle">青少年开发团队</p>
+        <h1>小饿工作室</h1>
+        <p>青少年开发团队</p>
     </header>
 
     <!-- 导航栏 -->
@@ -179,68 +252,84 @@
 
         <!-- 关于我们 -->
         <section id="about">
-            <h2 id="about-title">关于我们</h2>
-            <p id="about-content">小饿工作室是一个由充满激情和创造力的青少年组成的开发团队。我们致力于将想法变为现实，专注于网页设计与应用开发。</p>
-            <p id="about-note"><strong>注意：</strong> 我们目前不提供数字营销服务，也不接受外部订单，仅用于展示我们的作品和能力。</p>
-            <p>主站(国际github): <a href="https://xiaoews.github.io" target="_blank">xiaoews.github.io</a></p>
-            <p>备用1(香港): <a href="http://xiaoews.hppro1.hpnu.cn" target="_blank">xiaoews.hppro1.hpnu.cn</a></p>
-            <p>备用2(高防备用): <a href="http://xiaoews.back1.idcfengye.com" target="_blank">xiaoews.back1.idcfengye.com</a></p>
-            <p id="about-note"><strong>提醒：</strong> 最新信息以主站<a href="https://xiaoews.github.io" target="_blank">xiaoews.github.io</a>为准<br>本站点最后一次更新为2025.02.02</p>
+            <h2>关于我们</h2>
+            <p>小饿工作室是一个由充满激情和创造力的青少年组成的开发团队。我们致力于将想法变为现实，专注于网页设计与应用开发。</p>
+            <p><strong>注意：</strong> 我们目前不提供数字营销服务，也不接受外部订单，仅用于展示我们的作品和能力。</p>
+            <p>主站(国际github): <a href="https://xiaoews.github.io" target="_blank">访问主站</a></p>
+            <p>备用1(香港): <a href="http://xiaoews.hppro1.hpnu.cn" target="_blank">访问备用站1</a></p>
+            <p>备用2(高防备用): <a href="http://xiaoews.back1.idcfengye.com" target="_blank">访问备用站2</a></p>
+            <p><strong>提醒：</strong> 最新信息以主站<a href="https://xiaoews.github.io" target="_blank">xiaoews.github.io</a>为准<br>本站点最后一次更新为2025.02.02</p>
         </section>
 
         <!-- 活动 -->
         <section id="wqx">
-            <h2 id="about-title">H5活动列表</h2>
-            <p><a href="https://xiaoews.github.io/XiaoENewYearPage/" class="button" aria-label="跳转">跨年网页(XiaoENewYearPage)</a></p>
+            <h2>H5活动列表</h2>
+            <p><a href="https://xiaoews.github.io/XiaoENewYearPage/" class="button primary">跨年网页(XiaoENewYearPage)</a></p>
         </section>
 
         <!-- 作品集 -->
         <section id="portfolio">
-            <h2 id="portfolio-title">作品集</h2>
-            <p>暂无完成项目<br><a href="dev/index.html" class="button" aria-label="跳转">查看更多...(聚合发布页)</a></p>
+            <h2>作品集</h2>
+            <p>暂无完成项目<br><a href="dev/index.html" class="button primary">查看更多...</a></p>
         </section>
 
         <!-- 加入我们 -->
         <section id="join-us">
-            <h2 id="contact-title">加入我们</h2>
-            <ul>
-                <a href="member/index.html" class="button" aria-label="跳转">成员名单</a>
-                <a href="recruit/index.html" class="button" aria-label="跳转">查看招聘页面</a>
-                [招收有想法的青少年开发者(8-17周岁)]
-            </ul>
+            <h2>加入我们</h2>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="member/index.html" class="button primary">成员名单</a>
+                <a href="recruit/index.html" class="button primary">查看招聘页面</a>
+            </div>
+            <p style="margin-top: 1rem;">[招收有想法的青少年开发者(8-17周岁)]</p>
         </section>
 
         <!-- 赞助链接 -->
         <section id="donate">
-            <h2 id="about-title">赞助链接</h2>
-            <p>迫于青少年无工作能力，为了维持项目基础支出，迫不得已添加广告回血，如愿意为我们提供帮助请使用如下链接支持，您单次捐助10元一上会写入赞助者名单(需要备注昵称或联系信息等等，否者默认收款方可查看的付款方名额)：
-</p><a href="https://tool.guliucang.com/o/universal_pay_view/?data=eyJxcSI6Imh0dHBzOi8vaS5xaWFuYmFvLnFxLmNvbS93YWxsZXQvc3FyY29kZS5odG0%2FbT10ZW5wYXkmZj13YWxsZXQmYT0xJnU9NTM2NzA2MTY0Jm49JUU1JUE0JUE5JUU1JUE0JUE5JUU5JUE1JUJGJUUyJTgxJUE3JUUyJTgxJUE3JTdFJUU1JTk2JUI1JUUyJTgxJUE3JUUyJTgwJUFEKyZhYz1DQUVROVBqMV93RVlrY1RDdWdZeURPUzRxdVM2dXVla3Z1UzZwRGdCUWlCbFl6UTBaV1l6T0dVeE56VXhaamMzTVRKaU1EazNaVGxpWmpRNU16Vm1OUSUzRCUzRF94eHhfc2lnbiIsIndlaXhpbiI6Ind4cDovL2YyZjBxNktPbnNXN1NIMnVteVZqTDhXbkR1VHExVHVuWDZOVlljMHBYWDJzY1NUV3lwaGI5ZEdoZEw1aUpaOWJ3LWNnIiwiYWxpcGF5IjoiaHR0cHM6Ly9xci5hbGlwYXkuY29tL2ZreDE2MjQzYXZtdmt6cjhrbWxjajViIn0%3D" class="button" aria-label="跳转">收款链接(QQ/WX/ZFB)</a>
-<a href="/donor/index.html" class="button" aria-label="跳转">捐赠者鸣谢名单</a>
+            <h2>赞助链接</h2>
+            <p>迫于青少年无工作能力，为了维持项目基础支出，迫不得已添加广告回血，如愿意为我们提供帮助请使用如下链接支持：</p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="https://tool.guliucang.com/o/universal_pay_view/..." class="button primary">赞助我们</a>
+                <a href="/donor/index.html" class="button secondary">捐赠者名单</a>
+            </div>
         </section>
 
         <!-- 联系我们 -->
         <section id="contact">
-            <h2 id="contact-title">联系我们</h2>
-            <p id="contact-content">如果您有任何疑问或合作意向，可以通过以下方式与我们联系：</p>
-            <ul>
-                <li id="contact-email">邮箱:<a href="mailto:tiantiane0616@126.com"> tiantiane0616@126.com</a></li>
-                <li>官方唯一指定客服:<a href="https://admin.qidian.qq.com/static_proxy/b2b-qq/wpa-link/index.html#/person?uin=3821852100"> QQ 3821852100</a></li>
-                <li>官方快手 <a href="https://v.kuaishou.com/a9s54K">小饿工作室(XiaoEWorkShop)</a></li>
-                <li>官方抖音 <a href="https://v.douyin.com/iyGJEqBK/">小饿工作室(XiaoEWorkShop)</a></li>
-                <li>官方贴吧 <a href="https://tieba.baidu.com/wxf/28154944?kw=%E5%B0%8F%E9%A5%BF%E5%B7%A5%E4%BD%9C%E5%AE%A4&fr=sharewise">小饿工作室吧</a></li>
-            </ul>
+            <h2>联系我们</h2>
+            <div class="contact-list">
+                <a href="mailto:tiantiane0616@126.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>tiantiane0616@126.com</span>
+                </a>
+                <a href="https://admin.qidian.qq.com/..." class="contact-item">
+                    <i class="fab fa-qq"></i>
+                    <span>QQ 3821852100</span>
+                </a>
+                <a href="https://v.kuaishou.com/a9s54K" class="contact-item">
+                    <i class="fab fa-kickstarter-k"></i>
+                    <span>快手：小饿工作室</span>
+                </a>
+                <a href="https://v.douyin.com/iyGJEqBK/" class="contact-item">
+                    <i class="fab fa-tiktok"></i>
+                    <span>抖音：小饿工作室</span>
+                </a>
+                <a href="https://tieba.baidu.com/wxf/28154944..." class="contact-item">
+                    <i class="fab fa-baidu"></i>
+                    <span>百度贴吧</span>
+                </a>
+            </div>
         </section>
 
         <!-- 友情链接 -->
         <section id="links">
-            <h2 id="about-title">友情链接</h2>
-            <p><a href="https://tiantiane0616.github.io/index.html">作者个人网站页面</a></p>
+            <h2>友情链接</h2>
+            <p><a href="https://tiantiane0616.github.io/index.html" class="button primary">作者个人网站</a></p>
         </section>
     </div>
 
     <!-- 页脚 -->
     <footer>
-        <p id="footer-copyright">&copy; 2024 小饿工作室. 版权所有.<br>页面由@天天饿喵Tiantiane 制作构建</p>
+        <p>&copy; 2024 小饿工作室. 版权所有.<br>页面由@天天饿喵Tiantiane 制作构建</p>
     </footer>
 </body>
 </html>
