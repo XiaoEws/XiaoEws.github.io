@@ -152,6 +152,19 @@
             margin-bottom: 5px;
             color: #666;
         }
+                /* 特殊卡片样式 */
+        .member-card.lead {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .member-card.wide {
+            grid-column: 1 / -1;
+            background: rgba(var(--accent-rgb), 0.1);
+        }
 
         /* 页脚 */
         footer {
@@ -411,11 +424,20 @@
                 <p>职位：音乐</p>
             </div>
             <!-- D -->
-            <div class="member-item member-wide">
-            <div>
-                    <h3>已离职成员表单
-</h3>      </div>
-</div>
+             <article class="member-card wide">
+                <div class="member-content">
+                    <h3>历史成员</h3>
+                    <div class="member-meta">
+                        <p>我们衷心感谢以下前成员对工作室的贡献</p>
+                        <ul style="margin-top:1rem;columns:2">
+                            <li>皇帝（管理）</li>
+                            <li>唉（管理）</li>
+                            <li>歌鸲和他的莺莺（开发）</li>
+                            <!-- 其他离职成员 -->
+                        </ul>
+                    </div>
+                </div>
+            </article>
 
         </div>
     </main>
