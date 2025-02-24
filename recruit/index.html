@@ -5,16 +5,23 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1391624694281614"
         crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-        <link rel="icon" href="../logo.png">
-
+    <link rel="icon" href="../logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小饿工作室 - 招聘页面</title>
-    <meta name="description" content="加入小饿工作室，一起创造未来！我们正在招聘有才华的青少年开发者。">
-     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1391624694281614" crossorigin="anonymous"></script>
-
-    <!-- 内嵌CSS样式 -->
+    <title>小饿工作室 - 青春开发者招募计划</title>
+    <meta name="description" content="加入青少年创新团队，开启你的科技之旅">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* 基本样式重置 */
+        :root {
+            --primary: #2c3e50;
+            /* 深邃蓝 */
+            --accent: #e74c3c;
+            /* 活力红 */
+            --text-light: #ecf0f1;
+            /* 浅色文本 */
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -22,157 +29,161 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f4f4f4;
-            position: relative;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             min-height: 100vh;
         }
 
-        /* 背景图片 */
-        .background {
+        /* 动态背景 */
+        .animated-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
+            background: linear-gradient(45deg,
+                    rgba(44, 62, 80, 0.1) 25%,
+                    rgba(231, 76, 60, 0.08) 50%,
+                    rgba(44, 62, 80, 0.1) 75%);
+            background-size: 400% 400%;
+            animation: gradientFlow 15s ease infinite;
         }
 
-        .background img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.3;
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* 头部 */
         header {
-            background-color: rgba(51, 51, 51, 0.8);
-            color: #fff;
+            background: linear-gradient(45deg, var(--primary), #34495e);
+            color: var(--text-light);
+            padding: 3rem 0 2rem;
             text-align: center;
-            padding: 20px 0;
-            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
-        header h1 {
-            margin-bottom: 10px;
-            font-size: 2em;
-        }
-
-        header p {
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-
-        .home-button,
-        .footer-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #fff;
-            color: #333;
+        .home-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary);
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background-color 0.3s, color 0.3s;
+            transition: var(--transition);
+            margin-top: 1.5rem;
         }
 
-        .home-button:hover,
-        .footer-link:hover {
-            background-color: #333;
-            color: #fff;
+        .home-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
         }
 
         /* 主内容 */
         main {
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            margin: 20px auto;
             max-width: 1200px;
-            border-radius: 10px;
+            margin: 2rem auto;
+            padding: 0 20px;
         }
 
-        /* 招聘职位列表 */
-        .job-list {
+        /* 职位网格 */
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .job-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .job-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .job-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .job-card h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
+            align-items: center;
+            gap: 0.8rem;
         }
 
-        .job-item {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+        .job-card h2 i {
+            color: var(--accent);
         }
 
-        .job-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        /* 职位详情 */
+        .job-detail {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
         }
 
-        .job-item h2 {
-            margin-bottom: 10px;
-            font-size: 1.5em;
-            color: #333;
+        .job-detail h3 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        .job-item p {
-            margin-bottom: 15px;
-            color: #666;
-        }
-
-        /* 按钮样式 */
-        .job-item a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
+        /* 申请按钮 */
+        .apply-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(45deg, var(--accent), #c0392b);
+            color: white;
+            border-radius: 8px;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: var(--transition);
+            margin-top: 1rem;
         }
 
-        .job-item a:hover,
         .apply-button:hover {
-            background-color: #575757;
-        }
-
-        /* 职位描述 */
-        .job-description {
-            margin-top: 40px;
-        }
-
-        .job-description h2 {
-            margin-bottom: 20px;
-            font-size: 2em;
-            color: #333;
-        }
-
-        .job-description ul {
-            list-style-type: disc;
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-
-        /* 申请方式 */
-        .apply {
-            margin-top: 40px;
-        }
-
-        .apply h2 {
-            margin-bottom: 20px;
-            font-size: 2em;
-            color: #333;
-        }
-
-        .apply p {
-            margin-bottom: 10px;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
         }
 
         /* 页脚 */
@@ -180,213 +191,182 @@
             background-color: rgba(51, 51, 51, 0.8);
             color: #fff;
             text-align: center;
-            padding: 20px 0;
-            position: relative;
-            margin-top: 40px;
-        }
-
-        footer p {
-            margin-bottom: 10px;
+            padding: 2rem 0;
+            margin-top: 4rem;
         }
 
         /* 响应式设计 */
         @media (max-width: 768px) {
-            .job-list {
-                flex-direction: column;
-                align-items: center;
+            .job-grid {
+                grid-template-columns: 1fr;
             }
 
-            .job-item {
-                width: 80%;
-            }
-
-            header h1 {
-                font-size: 1.5em;
-            }
-
-            .job-description h2,
-            .apply h2 {
-                font-size: 1.5em;
+            .job-card {
+                width: 90%;
+                margin: 0 auto;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- 背景图片 -->
-    <div class="background">
-        <img src="images/background.jpg" alt="背景图片">
-    </div>
+    <div class="animated-bg"></div>
 
-    <!-- 头部 -->
     <header>
-        <h1>加入我们</h1>
-        <p>一起创造未来！</p>
-        <a href="/index.html" class="home-button" aria-label="跳转到主页">返回主页</a>
+        <h1><i class="fas fa-users-cog"></i> 青春开发者计划</h1>
+        <p>让创意与技术共同成长</p>
+        <a href="/index.html" class="home-button">
+            <i class="fas fa-arrow-left"></i>返回主页
+        </a>
     </header>
 
-    <!-- 主内容 -->
     <main>
-        <h3>您对我们感兴趣但目前能力不足可以以摸鱼职位入职, 群内有配套学习资料，同时可以考虑管理或纯闲聊</h3><br>
-        <div class="container">
-            <!-- 招聘职位列表 -->
-            <div class="job-list">
-                <!-- 职位1 -->
-                <div class="job-item">
-                    <h2>青少年开发者</h2>
-                    <p>加入我们的开发团队，参与创新项目，发挥你的创意和技能。</p>
-                    <a href="#developer" aria-label="查看青少年开发者职位详情">查看详情</a>
-                </div>
-
-                <!-- 职位2 -->
-                <div class="job-item">
-                    <h2>UI/UX设计师</h2>
-                    <p>设计用户友好的界面，提升用户体验。</p>
-                    <a href="#designer" aria-label="查看UI/UX设计师职位详情">查看详情</a>
-                </div>
-
-                <!-- 职位3 -->
-                <div class="job-item">
-                    <h2>美术绘制</h2>
-                    <p>绘制精美和谐与对应主题的插画</p>
-                    <a href="#artist" aria-label="查看美术职位详情">查看详情</a>
-                </div>
-
-                <!-- 职位4 -->
-                <div class="job-item">
-                    <h2>音乐</h2>
-                    <p>音乐工程设计实现</p>
-                    <a href="#music" aria-label="查看音乐职位详情">查看详情</a>
-                </div>
-
-                <!-- 职位5 -->
-                <div class="job-item">
-                    <h2>摸鱼</h2>
-                    <p>摸鱼聊天/策划</p>
-                    <a href="#idle" aria-label="查看摸鱼职位详情">查看详情</a>
-                </div>
-
-                <!-- 职位6 -->
-                <div class="job-item">
-                    <h2>其它</h2>
-                    <p>阿巴阿巴阿巴</p>
-                    <a href="#other" aria-label="查看其它职位详情">查看详情</a>
-                </div>
+        <section class="intro">
+            <div class="job-detail">
+                <h3><i class="fas fa-info-circle"></i> 加入说明</h3>
+                <p>欢迎8-16周岁的青少年加入我们的创新团队！零基础可通过"成长计划"入职，享受专属学习资源。</p>
             </div>
+        </section>
 
-            <!-- 职位描述 -->
-            <div class="job-description" id="developer">
-                <h2>开发者职位描述</h2>
+        <div class="job-grid">
+            <!-- 开发职位 -->
+            <article class="job-card">
+                <h2><i class="fas fa-code"></i>技术开发</h2>
+                <p>参与软件项目开发，用代码创造未来</p>
+                <a href="#developer" class="apply-button">查看详情</a>
+            </article>
+
+            <!-- 设计职位 -->
+            <article class="job-card">
+                <h2><i class="fas fa-palette"></i>创意设计</h2>
+                <p>打造用户喜爱的视觉体验</p>
+                <a href="#designer" class="apply-button">查看详情</a>
+            </article>
+
+            <!-- 美术职位 -->
+            <article class="job-card">
+                <h2><i class="fas fa-paint-brush"></i>数字美术</h2>
+                <p>绘制令人惊叹的视觉作品</p>
+                <a href="#artist" class="apply-button">查看详情</a>
+            </article>
+
+            <!-- 音乐职位 -->
+            <article class="job-card">
+                <h2><i class="fas fa-music"></i>音频工程</h2>
+                <p>创造动人的声音体验</p>
+                <a href="#music" class="apply-button">查看详情</a>
+            </article>
+
+            <!-- 成长计划 -->
+            <article class="job-card" style="--accent: #2ecc71;">
+                <h2><i class="fas fa-seedling"></i>成长计划</h2>
+                <p>零基础入门，提供相互交流学习</p>
+                <a href="#growth" class="apply-button">查看详情</a>
+            </article>
+        </div>
+
+        <!-- 职位详情 -->
+        <section class="job-detail" id="developer">
+            <h3><i class="fas fa-laptop-code"></i> 技术开发职位</h3>
+            <div class="requirements">
+                <h4>岗位职责：</h4>
                 <ul>
-                    <li>参与软件项目的开发与维护</li>
-                    <li>编写高质量的代码</li>
-                    <li>与团队成员协作，解决技术问题</li>
-                    <li>持续学习和提升技术能力</li>
+                    <li>参与项目需求分析和技术方案设计</li>
+                    <li>编写高质量可维护的代码</li>
+                    <li>参与代码审查和技术文档编写</li>
+                    <li>学习并应用新技术解决方案</li>
                 </ul>
-                <p><strong>要求：</strong></p>
-                <ul>
-                    <li>年龄10-16周岁</li>
-                    <li>对编程有浓厚兴趣</li>
-                    <li>具备基础编程知识</li>
-                    <li>良好的团队合作精神</li>
-                </ul>
+
+
                 <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272"
-                    aria-label="申请青少年开发者职位">申请职位</a>
+                    class="apply-button">
+                    <i class="fas fa-rocket"></i>立即申请
+                </a>
             </div>
+        </section>
 
-            <div class="job-description" id="designer">
-                <h2>UI/UX设计师职位描述</h2>
+
+        <!-- UI/UX 设计师 -->
+        <section class="job-detail" id="designer">
+            <h3><i class="fas fa-paint-brush"></i> UI/UX 设计师职位</h3>
+            <div class="requirements">
+                <h4>岗位职责：</h4>
                 <ul>
                     <li>设计用户界面和用户体验</li>
                     <li>创建线框图和原型</li>
                     <li>与开发团队协作，确保设计实现</li>
                     <li>收集用户反馈，优化设计</li>
                 </ul>
-                <p><strong>要求：</strong></p>
-                <ul>
-                    <li>年龄8-17周岁</li>
-                    <li>具备UI/UX设计经验</li>
-                    <li>熟悉设计工具（如Adobe XD, Sketch, Figma）</li>
-                    <li>良好的沟通和协作能力</li>
-                </ul>
-                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272"
-                    aria-label="申请UI/UX设计师职位">申请职位</a>
-            </div>
 
-            <div class="job-description" id="artist">
-                <h2>美术职位描述</h2>
+
+                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272"
+                    class="apply-button">
+                    <i class="fas fa-rocket"></i>立即申请
+                </a>
+            </div>
+        </section>
+
+        <!-- 美术 -->
+        <section class="job-detail" id="artist">
+            <h3><i class="fas fa-palette"></i> 美术职位</h3>
+            <div class="requirements">
+                <h4>岗位职责：</h4>
                 <ul>
-                    <li>负责游戏、应用程序或网站中的美术资源设计，包括角色、场景、UI元素等</li>
+                    <li>负责游戏、应用程序或网站中的美术资源设计</li>
                     <li>根据项目需求，创建高质量的图像和动画</li>
-                    <li>与游戏设计师、开发人员和产品经理合作，确保美术风格与项目整体风格一致</li>
+                    <li>与游戏设计师、开发人员和产品经理合作</li>
                     <li>优化和调整美术资源，以提高性能和用户体验</li>
                     <li>参与创意讨论，提出美术设计方面的建议和改进方案</li>
                 </ul>
-                <p><strong>要求：</strong></p>
-                <ul>
-                    <li>年龄8-17周岁</li>
-                    <li>会画画就行</li>
-                    <li>最好熟悉设计工具（如Adobe XD, Sketch, Figma）</li>
-                    <li>最好良好的沟通和协作能力</li>
-                </ul>
-                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272"
-                    aria-label="申请美术职位">申请职位</a>
-            </div>
 
-            <div class="job-description" id="music">
-                <h2>音乐职位描述</h2>
-                <h3>音频工程师职位描述</h3>
+
+                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272"
+                    class="apply-button">
+                    <i class="fas fa-rocket"></i>立即申请
+                </a>
+            </div>
+        </section>
+        <!-- 音乐 -->
+        <section class="job-detail" id="musician">
+            <h3><i class="fas fa-music"></i> 音乐职位（音频工程师）</h3>
+            <div class="requirements">
+                <h4>岗位职责：</h4>
                 <ul>
                     <li>负责录音、编辑、混音和母带处理等音频工作</li>
                     <li>操作和管理音频设备，包括麦克风、混音台、音频接口等</li>
-                    <li>与音乐制作人、艺术家和其他团队成员合作，确保音频作品的质量</li>
+                    <li>与音乐制作人、艺术家和其他团队成员合作</li>
                     <li>进行现场音响调试和录音工作</li>
                     <li>解决音频技术问题，提供技术支持</li>
                 </ul>
-                <p><strong>要求：</strong></p>
-                <ul>
-                    <li>年龄8-17周岁，但需具备相关经验和技能</li>
-                    <li>最好熟悉音频工程原理和录音技术</li>
-                    <li>最好熟练使用音频编辑软件，如 Pro Tools、Adobe Audition、Cubase 等</li>
-                    <li>最好具备良好的听觉感知能力和音频处理技巧</li>
-                    <li>有相关工作经验或项目经验者优先</li>
-                </ul>
-                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272 class="
-                    aria-label="申请音乐职位">申请职位</a>
-            </div>
-            <div class="job-description" id="5">
-                <h2>摸鱼职位描述</h2>
-                <ul>
-                    <li>阿巴阿巴阿巴</li>
-                    <li>目前不会但想要学习可以进群也有配套学习资料</li>
-                </ul>
-                <p><strong>要求：</strong></p>
-                <ul>
-                    <li>年龄6-17周岁</li>
-                    <li>良好友善的沟通能力</li>
-                </ul>
-                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272 class="
-                    aria-label="申请摸鱼职位">申请职位</a>
-            </div>
 
-            <!-- 申请方式 -->
-            <div class="apply" id="6">
-                <h2>如何申请</h2>
-                <p>首选:加入 <a
-                        href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272 class=">QQ面试审核群995627272</a>，申请注明“申请职位：XXX”。
-                </p>
-                <p>备选:请将您的简历和作品集发送至 <a href="mailto:tiantiane0616@126.com">tiantiane0616@126.com</a>，邮件标题注明“申请职位：XXX”。
-                </p>
-                <p>我们期待您的加入！</p>
+
+
+                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BQREmPVwRMWmQOsUsnUci2_b4GN1NVLu&authKey=nNyJRyq89%2BGjQakywkfgMM61bwiMyIL4pE5h5HilcOhu5uV%2F75DHcP%2BdOppnGdG1&noverify=0&group_code=995627272"
+                    class="apply-button">
+                    <i class="fas fa-rocket"></i>立即申请
+                </a>
             </div>
-        </div>
+        </section>
+
+        <!-- 其他职位详情... -->
+
+        <section class="job-detail" id="growth">
+            <h3><i class="fas fa-graduation-cap"></i> 成长计划</h3>
+            <div class="program-details">
+                <h4>申请方式：</h4>
+                <p>加入QQ交流群：995627272 或发送邮件至
+                    <a href="mailto:tiantiane0616@126.com" class="apply-button">
+                        <i class="fas fa-envelope"></i>tiantiane0616@126.com
+                    </a>
+                </p>
+            </div>
+        </section>
     </main>
 
-    <!-- 页脚 -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 小饿工作室. 版权所有.</p>
-            <p>页面由@天天饿喵Tiantiane 制作构建</p>
+            <p>&copy; 2024-2025 小饿工作室. 版权所有</p>
+            <p>页面由@天天饿喵Tiantiane 匠心打造</p>
         </div>
     </footer>
 </body>
