@@ -7,9 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小饿工作室 - 软件发布页</title>
     <meta name="description" content="介绍小饿工作室最新发布的软件，包括功能、下载链接和更新日志。">
-    <!-- 内嵌CSS样式 -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* 基本样式重置 */
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --text-light: #ecf0f1;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -20,12 +26,10 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f4f4f4;
-            position: relative;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             min-height: 100vh;
         }
 
-        /* 背景图片 */
         .background {
             position: fixed;
             top: 0;
@@ -42,229 +46,313 @@
             opacity: 0.3;
         }
 
-        /* 头部 */
         header {
-            background-color: rgba(51, 51, 51, 0.8);
-            color: #fff;
+            background: linear-gradient(45deg, var(--primary-color), #34495e);
+            color: var(--text-light);
             text-align: center;
-            padding: 20px 0;
-            position: relative;
+            padding: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        header .logo {
-            width: 100px;
-            height: auto;
-            margin-bottom: 10px;
+        .home-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
         }
 
-        header h1 {
-            margin-bottom: 10px;
-            font-size: 2em;
-        }
-
-        header p {
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-
-        /* 跳转按钮 */
-        .home-button,
-        .footer-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #fff;
-            color: #333;
+        .home-button {
+            padding: 12px 25px;
+            background: rgba(255,255,255,0.9);
+            color: var(--primary-color);
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background-color 0.3s, color 0.3s;
+            transition: all 0.3s;
+            border: 2px solid transparent;
         }
 
-        .home-button:hover,
-        .footer-link:hover {
-            background-color: #333;
-            color: #fff;
+        .home-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-color: var(--accent-color);
         }
 
-        /* 主内容 */
         main {
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            margin: 20px auto;
+            padding: 40px 20px;
             max-width: 1200px;
-            border-radius: 10px;
+            margin: 30px auto;
         }
 
-        /* 各部分样式 */
         section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 30px;
             margin-bottom: 40px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            animation: fadeInUp 0.6s ease-out;
         }
 
-        section h2 {
-            margin-bottom: 20px;
-            color: #333;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent-color);
         }
 
-        /* 软件截图 */
-        .screenshot-gallery {
+        /* 平台切换 */
+        .platform-selector {
             display: flex;
             gap: 10px;
-            flex-wrap: wrap;
+            margin-bottom: 25px;
         }
 
-        .screenshot-gallery img {
-            width: calc(50% - 10px);
-            height: auto;
-            border: 1px solid #ccc;
-            padding: 5px;
-            border-radius: 5px;
+        .platform-tab {
+            flex: 1;
+            padding: 15px;
+            background: #f8f9fa;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        @media (max-width: 768px) {
-            .screenshot-gallery img {
-                width: 100%;
-            }
+        .platform-tab.active {
+            background: var(--accent-color);
+            color: white;
         }
 
         /* 下载按钮 */
         .download-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #333;
-            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            border-radius: 8px;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            transition: background-color 0.3s;
+            margin: 15px 0;
+            transition: transform 0.3s;
+            animation: pulse 2s infinite;
         }
 
         .download-button:hover {
-            background-color: #575757;
+            transform: translateY(-2px);
         }
 
-        /* 页脚 */
-        footer {
-            background-color: rgba(51, 51, 51, 0.8);
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
+        /* 用户评价 */
+        .user-review {
             position: relative;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 4px solid var(--accent-color);
         }
 
-        footer p {
-            margin-bottom: 10px;
+        .user-review::before {
+            content: "“";
+            font-size: 4rem;
+            color: var(--accent-color);
+            position: absolute;
+            left: 15px;
+            top: -15px;
         }
 
-        /* 响应式设计 */
+        /* 更新日志 */
+        #changelog ul {
+            list-style: none;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        #changelog li {
+            position: relative;
+            padding: 25px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        #changelog li::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 28px;
+            width: 16px;
+            height: 16px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        /* FAQ */
+        .faq-item {
+            margin: 20px 0;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+
+        .faq-question {
+            padding: 15px;
+            background: #f8f9fa;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .faq-answer {
+            padding: 15px;
+            display: none;
+        }
+
+        /* 响应式 */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.5em;
+            .platform-selector {
+                flex-direction: column;
             }
+            
+            .download-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
 
-            .home-button,
-            .footer-link {
-                padding: 8px 16px;
-                font-size: 0.9em;
-            }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
 <body>
-    <!-- 背景图片 -->
     <div class="background">
         <img src="images/background.jpg" alt="背景图片">
     </div>
 
-    <!-- 头部 -->
     <header>
         <div class="container">
-
             <h1>XXX 发布页</h1>
             <p>最新版本：框架测试中</p>
-            <!-- 跳转到主页的按钮 -->
-            <a href="/index.html" class="home-button" aria-label="跳转到主页">返回主页</a>
-            <a href="/dev/index.html" class="home-button" aria-label="跳转到聚合发布页">返回聚合发布页页</a>
+            <div class="home-buttons">
+                <a href="/index.html" class="home-button">
+                    <i class="fas fa-home"></i> 返回主页
+                </a>
+                <a href="/dev/index.html" class="home-button">
+                    <i class="fas fa-box-open"></i> 聚合发布页
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- 主内容 -->
     <main>
         <div class="container">
-            <!-- 软件简介 -->
             <section id="introduction">
-                <h2>软件简介</h2>
-                
+                <h2><i class="fas fa-info-circle"></i> 软件简介</h2>
                 <p>测试中</p>
             </section>
 
-            <!-- 软件截图 -->
             <section id="screenshots">
-                <h2>软件截图</h2>
+                <h2><i class="fas fa-camera"></i> 软件截图</h2>
                 <div class="screenshot-gallery">
-                    <img src="screenshot1.png" alt="软件截图1">
-                    <img src="" alt="软件截图2">
-                    <!-- 可以添加更多截图 -->
+                    <img src="screenshot1.png" alt="截图1">
+                    <img src="screenshot2.png" alt="截图2">
                 </div>
             </section>
-            
 
-           <section id="introduction">
+            <section class="user-review">
                 <h2>用户评价</h2>
-                
                 <p>嫂子很舒服，一点也不起球，也不捂脚，洗的也特别干净，泡沫很绵密买了三包了，质量非常好，与卖家描述一致，孩子们都特别喜欢吃，版型很好，面料舒适，尺码标准，买了，质量非常好，与卖家描述一致，孩子们都特别喜欢吃，版型很好，面料舒适，尺码标准，不沾杯持妆久，橘色系更加显白，洗完也很柔顺头发也不油了，屏幕清晰运行流畅，敏感肌用起来毫无压力，握感舒适不伤牙龈，每次炒菜都会放几本，很满意的一次购物。与卖家描述的完全一致，非常满意，完全超出期望值，发货速度非常快，包装非常仔细、严实，物流公司服务态度很好，运送速度很快，很满意的一次购物。一打开，看到包装，太可爱了，超级喜欢！价格不错，质量不错我不是托，买了三次了，质量非常好，与卖家描述一致，孩子们都特别喜欢吃，版型很好，面料舒适，尺码标准，不沾杯持妆久，橘色系更加显白，洗完也很柔顺头发也不油了，屏幕清晰运行流畅，敏感肌用起来毫无压力。牙刷也不伤牙龈，刷的很干净，回弹也很快，质量很好，穿在身上很舒适，回头率百分百。每次炒菜都会放几滴，洗得很干净。而且这个手机壳还便宜又好看，所以每天晚上我都会吃两片。不到一周儿子就说我变好看了不少，以后买狗粮就买这家</p>
-                            
             </section>
-            <!-- 下载链接 -->
+
             <section id="downloads">
-                <h2>Windwos下载链接(首选链接因GithubPage限制不提供)</h2>
-                <a href="H5C0C39E1_windows-test-kj1.0.0.exe" class="download-button" download>下载</a>
-                <a href="https://wwwq.lanzouu.com/inth42j6ttde?webpage=BjcHZ1s1AGEEYQpsB2ZTalE6BjZUdwc3VmBWZVE_bAzdVYlU2DWEFZVV_aB2A_c" class="download-button" download>网盘下载(备用4eh6)</a>
-                <p>版本：H5C0C39E1_windows-test-kj1.0.0. | 更新日期：2024年12月26日</p>
-                <h2>安卓下载链接</h2>
-                <a href="H5C0C39E1_android-test-kj1.0.0.apk" class="download-button" download>下载</a>
-                <a href="https://wwwq.lanzouu.com/i7nQ42j6tr0j?webpage=BzZaOlk3BGUDZlE3B2ZSawdsBTVefVNjADZQYwZpAzcHMAFlXDMBbAIoBGM_c" class="download-button" download>网盘下载(密码2brw)</a>
-                <br>andriod如在下载遇到问题请使用(查看 桌面/电脑 网站)或更换浏览器
-                <p>版本：H5C0C39E1_android-test-kj1.0.0. | 更新日期：2024年12月26日</p>
+                <h2><i class="fas fa-download"></i> 下载链接</h2>
+                <div class="platform-selector">
+                    <button class="platform-tab active" data-platform="windows">
+                        <i class="fab fa-windows"></i> Windows
+                    </button>
+                    <button class="platform-tab" data-platform="android">
+                        <i class="fab fa-android"></i> Android
+                    </button>
+                </div>
 
+                <!-- Windows 下载 -->
+                <div class="platform-content active" data-platform="windows">
+                    <a href="H5C0C39E1_windows-test-kj1.0.0.exe" class="download-button">
+                        <i class="fas fa-download"></i> 直接下载
+                    </a>
+                    <a href="https://example.com" class="download-button">
+                        <i class="fas fa-cloud-download-alt"></i> 网盘下载
+                    </a>
+                    <p>版本：1.0.0 | 更新日期：2024-12-26</p>
+                </div>
+
+                <!-- Android 下载 -->
+                <div class="platform-content" data-platform="android">
+                    <a href="H5C0C39E1_android-test-kj1.0.0.apk" class="download-button">
+                        <i class="fas fa-download"></i> 直接下载
+                    </a>
+                    <a href="https://example.com" class="download-button">
+                        <i class="fas fa-cloud-download-alt"></i> 网盘下载
+                    </a>
+                    <p>版本：1.0.0 | 更新日期：2024-12-26</p>
+                </div>
             </section>
 
-            <!-- 更新日志 -->
             <section id="changelog">
-                <h2>更新日志</h2>
+                <h2><i class="fas fa-history"></i> 更新日志</h2>
                 <ul>
-                    <li><strong>[02]android-test-kj1.0.0</strong> - 2024年12月26日
+                    <li>
+                        <strong>版本 1.0.0 (2024-12-26)</strong>
                         <ul>
                             <li>初始测试版本发布</li>
-                            <li>框架测试</li>
+                            <li>框架测试验证</li>
                         </ul>
                     </li>
-                    <li><strong>[01]windows-test-kj1.0.0</strong> - 2024年12月26日
-                        <ul>
-                            <li>初始测试版本发布</li>
-                            <li>框架测试</li>
-                        </ul>
-                    </li>
-                    <!-- 可以添加更多版本 -->
                 </ul>
+            </section>
+
+            <section id="faq">
+                <h2><i class="fas fa-question-circle"></i> 常见问题</h2>
+                <div class="faq-item">
+                    <div class="faq-question">如何验证文件完整性？</div>
+                    <div class="faq-answer">提供SHA256校验码：...（点击展开）</div>
+                </div>
             </section>
         </div>
     </main>
 
-    <!-- 页脚 -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 小饿工作室. 版权所有.<br>
-                页面由@天天饿喵Tiantiane 制作构建
-            </p>
-
+            <p>&copy; 2024 小饿工作室. 版权所有</p>
+            <p>页面构建：@天天饿喵Tiantiane</p>
         </div>
     </footer>
 
-    <!-- JavaScript代码 -->
     <script>
-        // 如果有动态功能，可以在这里添加
+        // 平台切换功能
+        document.querySelectorAll('.platform-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.platform-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.platform-content').forEach(c => c.classList.remove('active'));
+                
+                tab.classList.add('active');
+                document.querySelector(`.platform-content[data-platform="${tab.dataset.platform}"]`).classList.add('active');
+            });
+        });
+
+        // FAQ切换功能
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
     </script>
 </body>
 </html>
