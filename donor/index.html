@@ -1,35 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1391624694281614"
-     crossorigin="anonymous"></script>
-        <link rel="icon" href="../logo.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1391624694281614" crossorigin="anonymous"></script>
+    <link rel="icon" href="../logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1391624694281614" crossorigin="anonymous"></script>
     <title>小饿工作室 - 捐赠者鸣谢页面</title>
-    <meta name="description" content="针对于对小饿工作室(XiaoEWorkShop)的捐赠者(单次捐赠大于>10元)特别鸣谢页面">
-    <!-- 内嵌CSS样式 -->
+    <meta name="description" content="特别感谢支持小饿工作室的捐赠者">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-                /* 跳转按钮 */
-        .home-button,
-        .footer-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #fff;
-            color: #333;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background-color 0.3s, color 0.3s;
+        :root {
+            --primary: #2c3e50;     /* 主色调 */
+            --accent: #e74c3c;      /* 强调色 */
+            --text-light: #ecf0f1;  /* 浅色文字 */
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        .home-button:hover,
-        .footer-link:hover {
-            background-color: #333;
-            color: #fff;
-        }
-        /* 基本样式重置 */
         * {
             margin: 0;
             padding: 0;
@@ -37,89 +24,125 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f4f4f4;
-            position: relative;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             min-height: 100vh;
         }
 
-        /* 背景图片 */
-        .background {
+        /* 动态背景 */
+        .animated-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
+            background: linear-gradient(45deg, 
+                rgba(44, 62, 80, 0.1) 25%,
+                rgba(231, 76, 60, 0.08) 50%,
+                rgba(44, 62, 80, 0.1) 75%);
+            background-size: 400% 400%;
+            animation: gradientFlow 15s ease infinite;
         }
 
-        .background img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.3;
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* 头部 */
         header {
-            background-color: rgba(51, 51, 51, 0.8);
-            color: #fff;
+            background: linear-gradient(45deg, var(--primary), #34495e);
+            color: var(--text-light);
+            padding: 3rem 0 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             text-align: center;
-            padding: 20px 0;
-            position: relative;
         }
 
-        header .logo {
-            width: 100px;
-            height: auto;
-            margin-bottom: 10px;
+        .home-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.9);
+            color: var(--primary);
+            border-radius: 30px;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            margin-top: 1.5rem;
         }
 
-        header h1 {
-            margin-bottom: 10px;
-            font-size: 2em;
-        }
-
-        header p {
-            font-style: italic;
-            margin-bottom: 10px;
+        .home-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            border-color: var(--accent);
         }
 
         /* 主内容 */
         main {
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            margin: 20px auto;
-            max-width: 1200px;
-            border-radius: 10px;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 20px;
         }
 
-        
-        /* 按钮样式 */
-        .software-item a {
+        .donation-notice {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        /* 捐赠者列表 */
+        .donor-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .donor-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            border-left: 4px solid var(--accent);
+        }
+
+        .donor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .donor-number {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 1rem;
         }
 
-        .software-item a:hover {
-            background-color: #575757;
+        .donor-details {
+            color: #666;
+            margin-top: 1rem;
+            padding-left: 2rem;
         }
 
-        /* 页脚 */
+        /* 页脚 (保留原有样式) */
         footer {
             background-color: rgba(51, 51, 51, 0.8);
             color: #fff;
             text-align: center;
             padding: 20px 0;
-            position: relative;
             margin-top: 40px;
+            position: relative;
         }
 
         footer p {
@@ -128,127 +151,73 @@
 
         /* 响应式设计 */
         @media (max-width: 768px) {
-            .software-list {
-                flex-direction: column;
-                align-items: center;
+            .donor-card {
+                padding: 1rem;
             }
-
-            .software-item {
-                width: 80%;
-            }
-
-            header h1 {
-                font-size: 1.5em;
+            
+            .donor-details {
+                padding-left: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 背景图片 -->
-    <div class="background">
-        <img src="images/background.jpg" alt="背景图片">
-    </div>
+    <div class="animated-bg"></div>
 
-    <!-- 头部 -->
     <header>
         <div class="container">
-            <h1>捐赠者鸣谢页面</h1>
-            <a href="/index.html" class="home-button" aria-label="跳转到主页">返回主页</a>
+            <h1><i class="fas fa-heart"></i> 捐赠者鸣谢</h1>
+            <a href="/index.html" class="home-button">
+                <i class="fas fa-arrow-left"></i>返回主页
+            </a>
         </div>
     </header>
-    <!-- 主内容 -->
-        <main>
-        <div class="jjz20250112">
-              <h2>
-                  本站点最后一次更新鸣谢名单为2025.01.12<br>
-                                  </h2>
-                  <h4>
-                  数据同步由人工完成<br>
-                  一般在三个工作日内完成数据更新<br>
-                  如在您付款后超过约7个工作日或在标注的更新时间的1天后未出现您的信息请及时联系tiantiane0616@126.com
-                  </h4>
-                <br>
-            </div>
-        </div>
-    </main>
+
     <main>
-        <div class="jjz20250112">
-              <h3>1.小雨
-                </h3>
-                <br>
-                <h4>
-                    捐赠：15.00CNY<br>
-                    联系方式：3561894477@qq.com
-                    <br>
-                    捐赠时间:2024.01.08-16:51
-                </h4>
-            </div>
-        </div>
-    </main>
-    <main>
-        <div class="jjz20250112">
-              <h3>2.
-                </h3>
-                <br>
-                <h4>
-                    捐赠：00.00CNY<br>
-                    联系方式：(未提供)
-                                        <br>
-                    捐赠时间:
-                </h4>
-            </div>
-        </div>
-    </main>
-    <main>
-        <div class="jjz20250112">
-              <h3>3.
-                </h3>
-                <br>
-                <h4>
-                    捐赠：00.00CNY<br>
-                    联系方式：(未提供)
-                                        <br>
-                    捐赠时间:
-                </h4>
-            </div>
-        </div>
-    </main>
-    <main>
-        <div class="jjz20250112">
-              <h3>4.
-                </h3>
-                <br>
-                <h4>
-                    捐赠：00.00CNY<br>
-                    联系方式：(未提供)
-                                        <br>
-                    捐赠时间:
-                </h4>
-            </div>
-        </div>
-    </main>
-    <main>
-        <div class="jjz20250112">
-              <h3>5.
-                </h3>
-                <br>
-                <h4>
-                    捐赠：00.00CNY<br>
-                    联系方式：(未提供)
-                                        <br>
-                    捐赠时间:
-                </h4>
-            </div>
+        <section class="donation-notice">
+            <h2><i class="fas fa-sync-alt"></i> 数据更新说明</h2>
+            <p>最后更新：2025年1月12日</p>
+            <p class="donor-details">
+                <i class="fas fa-info-circle"></i> 数据同步由人工完成，通常在3个工作日内更新。<br>
+                如捐赠后7个工作日未显示信息，请联系：tiantiane0616@126.com
+            </p>
+        </section>
+
+        <div class="donor-list">
+            <!-- 捐赠者1 -->
+            <article class="donor-card">
+                <div class="donor-header">
+                    <span class="donor-number">1</span>
+                    <h3>小雨</h3>
+                </div>
+                <div class="donor-details">
+                    <p><i class="fas fa-donate"></i> 捐赠金额：15.00 CNY</p>
+                    <p><i class="fas fa-envelope"></i> 联系方式：3561894477@qq.com</p>
+                    <p><i class="fas fa-clock"></i> 捐赠时间：2024-01-08 16:51</p>
+                </div>
+            </article>
+
+            <!-- 捐赠者模板 -->
+            <article class="donor-card">
+                <div class="donor-header">
+                    <span class="donor-number">2</span>
+                    <h3>待更新</h3>
+                </div>
+                <div class="donor-details">
+                    <p><i class="fas fa-donate"></i> 捐赠金额：00.00 CNY</p>
+                    <p><i class="fas fa-envelope"></i> 联系方式：未提供</p>
+                    <p><i class="fas fa-clock"></i> 捐赠时间：待更新</p>
+                </div>
+            </article>
+
+            <!-- 更多捐赠者... -->
         </div>
     </main>
 
-    <!-- 页脚 -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 小饿工作室. 版权所有.
-                <br>
-                页面由@天天饿喵Tiantiane 制作构建
-            </p>
+            <p>&copy; 2024 小饿工作室. 版权所有</p>
+            <p>页面由@天天饿喵Tiantiane 制作构建</p>
         </div>
     </footer>
 </body>
