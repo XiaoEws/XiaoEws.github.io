@@ -81,6 +81,60 @@
             --shadow-color: rgba(255, 255, 255, 0.1);
             --section-bg: #2D3748;
         }
+                /* 核心按钮样式 */
+        .btn-3d-ripple {
+            position: relative;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(167, 119, 227, 0.3);
+        }
+
+        .btn-3d-ripple::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            transition: transform 0.5s, opacity 1s;
+        }
+
+        .btn-3d-ripple:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(167, 119, 227, 0.4);
+        }
+
+        .btn-3d-ripple:active {
+            transform: translateY(1px);
+            box-shadow: 0 5px 15px rgba(167, 119, 227, 0.3);
+        }
+
+        .btn-3d-ripple:active::after {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+            transition: 0s;
+        }
+
+        .btn-3d-ripple::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+        }
+
 
         * {
             margin: 0;
@@ -361,21 +415,21 @@
 
         <section id="wqx">
             <h2>H5活动列表</h2>
-            <p><a href="https://xiaoews.github.io/XiaoENewYearPage/" class="button primary">跨年网页(XiaoENewYearPage)</a></p>
+            <p><a href="https://xiaoews.github.io/XiaoENewYearPage/" class="btn-3d-ripple">跨年网页(XiaoENewYearPage)</a></p>
         </section>
 
         <section id="portfolio">
             <h2>作品集</h2>
             <div class="project-grid">
-                <p>暂无完成项目<br><a href="dev/index.html" class="button primary">查看更多...</a></p>
+                <p>暂无完成项目<br><a href="dev/index.html" class="btn-3d-ripple">查看更多...</a></p>
             </div>
         </section>
 
         <section id="join-us">
             <h2>加入我们</h2>
             <div class="button-group">
-                <a href="member/index.html" class="button primary">成员名单</a>
-                <a href="recruit/index.html" class="button primary">查看招聘</a>
+                <a href="member/index.html" class="btn-3d-ripple">成员名单</a>
+                <a href="recruit/index.html" class="btn-3d-ripple">查看招聘</a>
             </div>
             <p class="notice">[招收有想法的青少年开发者(8-17周岁)]</p>
         </section>
@@ -383,7 +437,7 @@
         <section id="donate">
             <h2>赞助链接</h2>
             <div class="button-group">
-                <a href="https://tool.guliucang.com/o/..." class="button primary" target="_blank">赞助我们</a>
+                <a href="https://tool.guliucang.com/o/universal_pay_view/?data=eyJxcSI6Imh0dHBzOi8vaS5xaWFuYmFvLnFxLmNvbS93YWxsZXQvc3FyY29kZS5odG0%2FbT10ZW5wYXkmZj13YWxsZXQmYT0xJnU9NTM2NzA2MTY0Jm49JUU1JUE0JUE5JUU1JUE0JUE5JUU5JUE1JUJGJUUyJTgxJUE3JUUyJTgxJUE3JTdFJUU1JTk2JUI1JUUyJTgxJUE3JUUyJTgwJUFEKyZhYz1DQUVROVBqMV93RVlrY1RDdWdZeURPUzRxdVM2dXVla3Z1UzZwRGdCUWlCbFl6UTBaV1l6T0dVeE56VXhaamMzTVRKaU1EazNaVGxpWmpRNU16Vm1OUSUzRCUzRF94eHhfc2lnbiIsIndlaXhpbiI6Ind4cDovL2YyZjBxNktPbnNXN1NIMnVteVZqTDhXbkR1VHExVHVuWDZOVlljMHBYWDJzY1NUV3lwaGI5ZEdoZEw1aUpaOWJ3LWNnIiwiYWxpcGF5IjoiaHR0cHM6Ly9xci5hbGlwYXkuY29tL2ZreDE2MjQzYXZtdmt6cjhrbWxjajViIn0%3D" class="btn-3d-ripple" target="_blank">赞助我们</a>
                 <a href="/donor/index.html" class="button secondary">捐赠者名单</a>
             </div>
         </section>
@@ -395,7 +449,7 @@
                     <i class="fas fa-envelope"></i>
                     <span>tiantiane0616@126.com</span>
                 </a>
-                <a href="https://admin.qidian.qq.com/..." class="contact-item" target="_blank">
+                <a href="" class="contact-item" target="_blank">
                     <i class="fab fa-qq"></i>
                     <span>QQ 3821852100</span>
                 </a>
@@ -417,9 +471,9 @@
         <section id="links">
             <h2>友情链接</h2>
             <div class="button-group">
-                <a href="https://tiantiane0616.github.io" class="button primary" target="_blank" rel="nofollow">作者网站</a>
-                <a href="http://www.xiao-es.top" class="button primary" target="_blank" rel="nofollow">ES网站</a>
-                <a href="https://moranworkshop.github.io" class="button primary" target="_blank" rel="nofollow">墨染工坊</a>
+                <a href="https://tiantiane0616.github.io" class="btn-3d-ripple"" target="_blank" rel="nofollow">作者网站</a>
+                <a href="http://www.xiao-es.top" class="btn-3d-ripple" target="_blank" rel="nofollow">ES网站</a>
+                <a href="https://moranworkshop.github.io" class="btn-3d-ripple" target="_blank" rel="nofollow">墨染工坊</a>
             </div>
         </section>
     </div>
