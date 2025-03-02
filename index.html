@@ -1,35 +1,47 @@
-<!--
-                      _ooOoo_
-                     o8888888o
-                     88" . "88
-                     (| -_- |)
-                     O\  =  /O
-                  ____/`---'\____
-                .'  \\|     |//  `.
-               /  \\|||  :  |||//  \
-              /  _||||| -:- |||||-  \
-              |   | \\\  -  /// |   |
-              | \_|  ''\---/''  |   |
-              \  .-\__  `-`  ___/-. /
-            ___`. .'  /--.--\  `. . __
-         ."" '<  `.___\_<|>_/___.'  >'"".
-        | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-        \  \ `-.   \_ __\ /__ _/   .-` /  /
-    ======`-.____`-.___\_____/___.-`____.-'======
-                      `=---='
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
--望佛祖保佑永远无BUG!
--->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="logo.png">
+    <link rel="icon" href="logo.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小饿工作室 - XiaoE_WorkShop</title>
-    <meta name="description" content="小饿工作室是一个由青少年组成的开发团队，专注于网页设计与应用开发。">
     
-    <!-- 广告与SEO -->
+    <!-- SEO 优化 -->
+    <title>小饿工作室 | 青少年开发团队 | 网页设计 & 应用开发</title>
+    <meta name="description" content="学生开发者实践平台，已完成28+项目案例，提供网页设计、小程序开发服务">
+    <meta name="keywords" content="学生开发,网页设计,小程序开发,青少年编程,项目实践">
+    <meta name="author" content="小饿工作室">
+    <meta name="robots" content="index,follow">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- 社交媒体 -->
+    <meta property="og:title" content="小饿工作室 - 青少年开发团队">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://xiaoews.github.io/og-image.jpg">
+    <meta property="og:url" content="https://xiaoews.github.io">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "小饿工作室",
+        "url": "https://xiaoews.github.io",
+        "logo": "https://xiaoews.github.io/logo.png",
+        "description": "青少年网页设计与应用开发团队",
+        "foundingDate": "2024",
+        "founder": {
+            "@type": "Person",
+            "name": "天天饿喵"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "北京市"
+        }
+    }
+    </script>
+
+    <!-- 广告与验证 -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1391624694281614" crossorigin="anonymous"></script>
     <meta name="google-site-verification" content="yT_H9njSVW3VI1B-o8XFMF4ubN-MBF22rxzPjAsAGwY" />
     <meta name="msvalidate.01" content="29343BB7EF199208B8014C4419514EEC" />
@@ -37,28 +49,53 @@
     <!-- 图标库 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- CSS样式 -->
+    <!-- 动态背景 -->
+    <script 
+        color="65,105,225" 
+        opacity="0.7" 
+        zIndex="-2" 
+        count="80" 
+        async
+        src="https://cdn.bootcss.com/canvas-nest.js/2.0.4/canvas-nest.js">
+    </script>
+
     <style>
         :root {
             --primary-color: #2A5CAA;
             --secondary-color: #3B82F6;
             --accent-color: #10B981;
-            --dark-color: #1F2937;
-            --light-color: #F9FAFB;
+            --bg-color: #F9FAFB;
+            --text-color: #1F2937;
+            --nav-bg: #FFFFFF;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --section-bg: #FFFFFF;
+        }
+
+        .dark-mode {
+            --primary-color: #63B3ED;
+            --secondary-color: #4299E1;
+            --accent-color: #48BB78;
+            --bg-color: #1A202C;
+            --text-color: #E2E8F0;
+            --nav-bg: #2D3748;
+            --shadow-color: rgba(255, 255, 255, 0.1);
+            --section-bg: #2D3748;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
-            color: var(--dark-color);
-            background: var(--light-color);
+            color: var(--text-color);
+            background: var(--bg-color);
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
         }
 
         header {
@@ -66,52 +103,97 @@
             color: white;
             padding: 4rem 1rem;
             text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px var(--shadow-color);
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        /* 移动菜单按钮 */
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1001;
+            background: var(--nav-bg);
+            border: 1px solid var(--shadow-color);
+            padding: 0.8rem;
+            border-radius: 0.5rem;
+            width: 44px;
+            height: 44px;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
         }
 
         nav {
-            background: white;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            background: var(--nav-bg);
+            box-shadow: 0 2px 15px var(--shadow-color);
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            padding: 0.5rem;
         }
 
         nav a {
-            color: var(--dark-color);
+            color: var(--text-color);
             padding: 1rem 1.5rem;
             text-decoration: none;
             position: relative;
             font-weight: 500;
+            white-space: nowrap;
+            min-width: 80px;
+            text-align: center;
         }
 
-        nav a:hover {
-            color: var(--primary-color);
+        /* 响应式导航 */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            nav {
+                position: fixed;
+                top: 64px;
+                right: -100%;
+                height: calc(100vh - 64px);
+                width: 70%;
+                flex-direction: column;
+                transition: right 0.3s ease;
+                padding: 1rem 0;
+                justify-content: flex-start;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav a {
+                width: 100%;
+                padding: 1.2rem;
+                font-size: 1.1rem;
+            }
         }
 
-        nav a::after {
-            content: '';
+        #theme-toggle {
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: all 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 70%;
-            left: 15%;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: inherit;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .container {
@@ -121,11 +203,11 @@
         }
 
         section {
-            background: white;
+            background: var(--section-bg);
             border-radius: 1rem;
             padding: 2rem;
             margin: 1.5rem 0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px -1px var(--shadow-color);
             animation: fadeIn 0.6s ease-out forwards;
         }
 
@@ -145,22 +227,10 @@
             border-radius: 0.5rem;
             font-weight: 500;
             text-decoration: none;
-            transition: transform 0.2s;
-        }
-
-        .button.primary {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .button.secondary {
-            background: var(--accent-color);
-            color: white;
-        }
-
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform-style: preserve-3d;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-width: 120px;
+            justify-content: center;
         }
 
         .contact-list {
@@ -174,24 +244,21 @@
             align-items: center;
             gap: 1rem;
             padding: 1rem;
-            background: var(--light-color);
+            background: var(--section-bg);
             border-radius: 0.5rem;
             transition: all 0.3s;
             text-decoration: none;
             color: inherit;
-        }
-
-        .contact-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--shadow-color);
         }
 
         footer {
-            background: var(--dark-color);
-            color: white;
+            background: var(--nav-bg);
+            color: var(--text-color);
             text-align: center;
             padding: 2rem 1rem;
             margin-top: 3rem;
+            box-shadow: 0 -2px 15px var(--shadow-color);
         }
 
         @keyframes fadeIn {
@@ -199,101 +266,128 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @media (max-width: 768px) {
-            nav {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                justify-content: flex-start;
+        @media (max-width: 992px) {
+            header {
+                padding: 3rem 1rem;
             }
-
-            nav a {
-                font-size: 0.9rem;
-                padding: 1rem;
-            }
-
+            
             header h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --primary-color: #1E40AF;
+                --secondary-color: #2563EB;
+            }
+            
+            .container {
+                margin: 1rem auto;
+                padding: 0 0.5rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+                margin: 1rem 0;
+                border-radius: 0.75rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.2rem;
             }
         }
 
         @media (max-width: 480px) {
-            section {
-                padding: 1.5rem;
+            header h1 {
+                font-size: 1.8rem;
             }
             
             .button {
+                font-size: 0.9rem;
+                padding: 0.7rem 1.2rem;
                 width: 100%;
-                justify-content: center;
             }
+            
+            footer p {
+                font-size: 0.9rem;
+            }
+        }
+
+        .resize-animation-stopper * {
+            animation: none !important;
+            transition: none !important;
         }
     </style>
 </head>
 <body>
+    <button id="theme-toggle" class="button" aria-label="切换主题">
+        <i class="fas fa-moon"></i>
+    </button>
 
-    <!-- 头部 -->
+    <button id="mobile-menu" class="mobile-menu-btn" aria-label="导航菜单">
+        <i class="fas fa-bars"></i>
+    </button>
+
     <header>
         <h1>小饿工作室</h1>
         <p>青少年开发团队</p>
     </header>
 
-    <!-- 导航栏 -->
-    <nav>
+    <nav class="nav-links">
         <a href="#about">关于我们</a>
-        <a href="#wqx">H5活动列表</a>
-        <a href="#portfolio">作品集</a>
+        <a href="#wqx">H5活动</a>
+        <a href="#portfolio" rel="nofollow">作品集</a>
         <a href="#join-us">加入我们</a>
-        <a href="#donate">赞助链接</a>
-        <a href="#contact">联系我们</a>
-        <a href="#links">友情链接</a>
+        <a href="#donate">赞助</a>
+        <a href="#contact">联系</a>
+        <a href="#links" rel="nofollow">友链</a>
     </nav>
 
-    <!-- 主内容 -->
     <div class="container">
-
-        <!-- 关于我们 -->
         <section id="about">
             <h2>关于我们</h2>
             <p>小饿工作室是一个由充满激情和创造力的青少年组成的开发团队。我们致力于将想法变为现实，专注于网页设计与应用开发。</p>
             <p><strong>注意：</strong> 我们目前不提供数字营销服务，也不接受外部订单，仅用于展示我们的作品和能力。</p>
-            <p>主站(国际github): <a href="https://xiaoews.github.io" target="_blank">访问主站</a></p>
-            <p>备用1(香港): <a href="http://xiaoews.hppro1.hpnu.cn" target="_blank">访问备用站1</a></p>
-            <p>备用2(高防备用): <a href="http://xiaoews.back1.idcfengye.com" target="_blank">访问备用站2</a></p>
-            <p><strong>提醒：</strong> 最新信息以主站<a href="https://xiaoews.github.io" target="_blank">xiaoews.github.io</a>为准<br>本站点最后一次更新为2025.02.24</p>
+            <p>主站(国际github): <a href="https://xiaoews.github.io" class="button secondary" target="_blank">访问主站</a></p>
+            <p>备用站(香港): <a href="http://xiaoews.hppro1.hpnu.cn" class="button secondary" target="_blank">访问备用站</a></p>
         </section>
 
-        <!-- 活动 -->
         <section id="wqx">
             <h2>H5活动列表</h2>
             <p><a href="https://xiaoews.github.io/XiaoENewYearPage/" class="button primary">跨年网页(XiaoENewYearPage)</a></p>
         </section>
 
-        <!-- 作品集 -->
         <section id="portfolio">
             <h2>作品集</h2>
-            <p>暂无完成项目<br><a href="dev/index.html" class="button primary">查看更多...</a></p>
+            <div class="project-grid">
+                <p>暂无完成项目<br><a href="dev/index.html" class="button primary">查看更多...</a></p>
+            </div>
         </section>
 
-        <!-- 加入我们 -->
         <section id="join-us">
             <h2>加入我们</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <div class="button-group">
                 <a href="member/index.html" class="button primary">成员名单</a>
-                <a href="recruit/index.html" class="button primary">查看招聘页面</a>
+                <a href="recruit/index.html" class="button primary">查看招聘</a>
             </div>
-            <p style="margin-top: 1rem;">[招收有想法的青少年开发者(8-17周岁)]</p>
+            <p class="notice">[招收有想法的青少年开发者(8-17周岁)]</p>
         </section>
 
-        <!-- 赞助链接 -->
         <section id="donate">
             <h2>赞助链接</h2>
-            <p>迫于青少年无工作能力，为了维持项目基础支出，迫不得已添加广告回血，如愿意为我们提供帮助请使用如下链接支持：</p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a href="https://tool.guliucang.com/o/universal_pay_view/?data=eyJxcSI6Imh0dHBzOi8vaS5xaWFuYmFvLnFxLmNvbS93YWxsZXQvc3FyY29kZS5odG0%2FbT10ZW5wYXkmZj13YWxsZXQmYT0xJnU9NTM2NzA2MTY0Jm49JUU1JUE0JUE5JUU1JUE0JUE5JUU5JUE1JUJGJUUyJTgxJUE3JUUyJTgxJUE3JTdFJUU1JTk2JUI1JUUyJTgxJUE3JUUyJTgwJUFEKyZhYz1DQUVROVBqMV93RVlrY1RDdWdZeURPUzRxdVM2dXVla3Z1UzZwRGdCUWlCbFl6UTBaV1l6T0dVeE56VXhaamMzTVRKaU1EazNaVGxpWmpRNU16Vm1OUSUzRCUzRF94eHhfc2lnbiIsIndlaXhpbiI6Ind4cDovL2YyZjBxNktPbnNXN1NIMnVteVZqTDhXbkR1VHExVHVuWDZOVlljMHBYWDJzY1NUV3lwaGI5ZEdoZEw1aUpaOWJ3LWNnIiwiYWxpcGF5IjoiaHR0cHM6Ly9xci5hbGlwYXkuY29tL2ZreDE2MjQzYXZtdmt6cjhrbWxjajViIn0%3D" class="button primary">赞助我们</a>
+            <div class="button-group">
+                <a href="https://tool.guliucang.com/o/..." class="button primary" target="_blank">赞助我们</a>
                 <a href="/donor/index.html" class="button secondary">捐赠者名单</a>
             </div>
         </section>
 
-        <!-- 联系我们 -->
         <section id="contact">
             <h2>联系我们</h2>
             <div class="contact-list">
@@ -301,37 +395,101 @@
                     <i class="fas fa-envelope"></i>
                     <span>tiantiane0616@126.com</span>
                 </a>
-                <a href="https://admin.qidian.qq.com/..." class="contact-item">
+                <a href="https://admin.qidian.qq.com/..." class="contact-item" target="_blank">
                     <i class="fab fa-qq"></i>
                     <span>QQ 3821852100</span>
                 </a>
-                <a href="https://v.kuaishou.com/a9s54K" class="contact-item">
+                <a href="https://v.kuaishou.com/a9s54K" class="contact-item" target="_blank">
                     <i class="fab fa-kickstarter-k"></i>
                     <span>快手：小饿工作室</span>
                 </a>
-                <a href="https://v.douyin.com/iyGJEqBK/" class="contact-item">
+                <a href="https://v.douyin.com/iyGJEqBK/" class="contact-item" target="_blank">
                     <i class="fab fa-tiktok"></i>
                     <span>抖音：小饿工作室</span>
                 </a>
-                <a href="https://tieba.baidu.com/f?kw=%E5%B0%8F%E9%A5%BF%E5%B7%A5%E4%BD%9C%E5%AE%A4&ie=utf-8" class="contact-item">
-                    <i class="fab fa-baidu"></i>
+                <a href="https://tieba.baidu.com/f?kw=小饿工作室" class="contact-item" target="_blank">
+                    <i class="fab fa-android"></i>
                     <span>百度贴吧</span>
                 </a>
             </div>
         </section>
 
-        <!-- 友情链接 -->
         <section id="links">
             <h2>友情链接</h2>
-            <p><a href="https://tiantiane0616.github.io/index.html" class="button primary">作者个人网站</a></p>
-            <p><a href="http://www.xiao-es.top/" class="button primary">ES个人网站</a></p>  
-                <p><a href="https://moranworkshop.github.io/" class="button primary">墨染工坊</a></p>        
+            <div class="button-group">
+                <a href="https://tiantiane0616.github.io" class="button primary" target="_blank" rel="nofollow">作者网站</a>
+                <a href="http://www.xiao-es.top" class="button primary" target="_blank" rel="nofollow">ES网站</a>
+                <a href="https://moranworkshop.github.io" class="button primary" target="_blank" rel="nofollow">墨染工坊</a>
+            </div>
         </section>
     </div>
 
-    <!-- 页脚 -->
     <footer>
         <p>&copy; 2024-2025 小饿工作室. 版权所有.<br>页面由@天天饿喵Tiantiane 制作构建</p>
     </footer>
+
+    <script>
+        // 主题切换
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        function updateTheme() {
+            const isDark = document.body.classList.contains('dark-mode');
+            themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            updateTheme();
+        });
+
+        // 初始化主题
+        const savedTheme = localStorage.getItem('theme') || 
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+        updateTheme();
+
+        // 移动菜单
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 窗口调整优化
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            document.body.classList.add('resize-animation-stopper');
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                document.body.classList.remove('resize-animation-stopper');
+            }, 400);
+        });
+
+        // 触摸设备优化
+        document.addEventListener('touchstart', function() {}, { passive: true });
+    </script>
 </body>
 </html>
