@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="logo.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO 优化 -->
     <title>小饿工作室 | 青少年开发团队 | 网页设计 & 应用开发</title>
     <meta name="description" content="学生开发者实践平台，已完成28+项目案例，提供网页设计、小程序开发服务">
@@ -42,7 +43,8 @@
     </script>
 
     <!-- 广告与验证 -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1391624694281614" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1391624694281614"
+        crossorigin="anonymous"></script>
     <meta name="google-site-verification" content="yT_H9njSVW3VI1B-o8XFMF4ubN-MBF22rxzPjAsAGwY" />
     <meta name="msvalidate.01" content="29343BB7EF199208B8014C4419514EEC" />
 
@@ -50,14 +52,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- 动态背景 -->
-    <script 
-        color="65,105,225" 
-        opacity="0.7" 
-        zIndex="-2" 
-        count="80" 
-        async
+    <script color="65,105,225" opacity="0.7" zIndex="-2" count="80" async
         src="https://cdn.bootcss.com/canvas-nest.js/2.0.4/canvas-nest.js">
-    </script>
+        </script>
 
     <style>
         :root {
@@ -81,20 +78,28 @@
             --shadow-color: rgba(255, 255, 255, 0.1);
             --section-bg: #2D3748;
         }
-                /* 核心按钮样式 */
+
+        /* ========== 核心按钮样式 ========== */
         .btn-3d-ripple {
             position: relative;
-            padding: 18px 40px;
+            padding: 1rem 2rem;
             border: none;
             border-radius: 12px;
             background: linear-gradient(135deg, #6e8efb, #a777e3);
             color: white;
-            font-size: 18px;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             overflow: hidden;
             transition: all 0.3s ease;
             box-shadow: 0 8px 20px rgba(167, 119, 227, 0.3);
+            min-width: 140px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            will-change: transform, box-shadow;
+            isolation: isolate;
         }
 
         .btn-3d-ripple::after {
@@ -102,13 +107,13 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.2);
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 50%;
             transform: translate(-50%, -50%) scale(0);
             opacity: 0;
-            transition: transform 0.5s, opacity 1s;
+            transition: transform 0.3s, opacity 0.6s;
         }
 
         .btn-3d-ripple:hover {
@@ -135,7 +140,7 @@
             border-radius: 12px;
         }
 
-
+        /* ========== 基础样式 ========== */
         * {
             margin: 0;
             padding: 0;
@@ -162,7 +167,7 @@
             box-shadow: 0 4px 6px -1px var(--shadow-color);
         }
 
-        /* 移动菜单按钮 */
+        /* ========== 导航样式 ========== */
         .mobile-menu-btn {
             display: none;
             position: fixed;
@@ -203,53 +208,7 @@
             text-align: center;
         }
 
-        /* 响应式导航 */
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: flex;
-            }
-            
-            nav {
-                position: fixed;
-                top: 64px;
-                right: -100%;
-                height: calc(100vh - 64px);
-                width: 70%;
-                flex-direction: column;
-                transition: right 0.3s ease;
-                padding: 1rem 0;
-                justify-content: flex-start;
-            }
-
-            nav.active {
-                right: 0;
-            }
-
-            nav a {
-                width: 100%;
-                padding: 1.2rem;
-                font-size: 1.1rem;
-            }
-        }
-
-        #theme-toggle {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            background: transparent;
-            border: none;
-            color: inherit;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
+        /* ========== 容器与区块 ========== */
         .container {
             max-width: 1200px;
             margin: 2rem auto;
@@ -273,20 +232,7 @@
             display: inline-block;
         }
 
-        .button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            text-decoration: none;
-            transform-style: preserve-3d;
-            transition: transform 0.2s, box-shadow 0.2s;
-            min-width: 120px;
-            justify-content: center;
-        }
-
+        /* ========== 联系信息样式 ========== */
         .contact-list {
             display: grid;
             gap: 1rem;
@@ -306,6 +252,7 @@
             border: 1px solid var(--shadow-color);
         }
 
+        /* ========== 页脚样式 ========== */
         footer {
             background: var(--nav-bg);
             color: var(--text-color);
@@ -315,16 +262,25 @@
             box-shadow: 0 -2px 15px var(--shadow-color);
         }
 
+        /* ========== 动画定义 ========== */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
+        /* ========== 响应式设计 ========== */
         @media (max-width: 992px) {
             header {
                 padding: 3rem 1rem;
             }
-            
+
             header h1 {
                 font-size: 2.2rem;
             }
@@ -335,26 +291,39 @@
                 --primary-color: #1E40AF;
                 --secondary-color: #2563EB;
             }
-            
-            .container {
-                margin: 1rem auto;
-                padding: 0 0.5rem;
+
+            .mobile-menu-btn {
+                display: flex;
             }
-            
-            section {
-                padding: 1.5rem;
-                margin: 1rem 0;
-                border-radius: 0.75rem;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-            }
-            
-            .contact-item {
+
+            nav {
+                position: fixed;
+                top: 64px;
+                right: -100%;
+                height: calc(100vh - 64px);
+                width: 70%;
                 flex-direction: column;
-                text-align: center;
+                transition: right 0.3s ease;
+                padding: 1rem 0;
+                justify-content: flex-start;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav a {
+                width: 100%;
                 padding: 1.2rem;
+                font-size: 1.1rem;
+            }
+
+            /* 按钮响应式调整 */
+            .btn-3d-ripple {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+                min-width: 120px;
+                border-radius: 8px;
             }
         }
 
@@ -362,15 +331,53 @@
             header h1 {
                 font-size: 1.8rem;
             }
-            
-            .button {
-                font-size: 0.9rem;
-                padding: 0.7rem 1.2rem;
+
+            .btn-3d-ripple {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+                min-width: 110px;
                 width: 100%;
             }
-            
+
             footer p {
                 font-size: 0.9rem;
+            }
+        }
+
+        /* ========== 特殊设备优化 ========== */
+        @media (hover: none) and (pointer: coarse) {
+            .btn-3d-ripple:hover {
+                transform: none !important;
+                box-shadow: 0 8px 20px rgba(167, 119, 227, 0.3);
+            }
+
+            .btn-3d-ripple:active {
+                transform: scale(0.98) !important;
+                box-shadow: 0 4px 12px rgba(167, 119, 227, 0.3);
+            }
+        }
+
+        /* ========== 可访问性优化 ========== */
+        .btn-3d-ripple:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .btn-3d-ripple {
+                transition: none;
+            }
+
+            .btn-3d-ripple::after {
+                transition: none;
+            }
+
+            body {
+                animation: none;
+            }
+
+            section {
+                animation: none;
             }
         }
 
@@ -380,6 +387,7 @@
         }
     </style>
 </head>
+
 <body>
     <button id="theme-toggle" class="button" aria-label="切换主题">
         <i class="fas fa-moon"></i>
@@ -415,7 +423,8 @@
 
         <section id="wqx">
             <h2>H5活动列表</h2>
-            <p><a href="https://xiaoews.github.io/XiaoENewYearPage/" class="btn-3d-ripple">跨年网页(XiaoENewYearPage)</a></p>
+            <p><a href="https://xiaoews.github.io/XiaoENewYearPage/" class="btn-3d-ripple">跨年网页(XiaoENewYearPage)</a>
+            </p>
         </section>
 
         <section id="portfolio">
@@ -437,7 +446,8 @@
         <section id="donate">
             <h2>赞助链接</h2>
             <div class="button-group">
-                <a href="https://tool.guliucang.com/o/universal_pay_view/?data=eyJxcSI6Imh0dHBzOi8vaS5xaWFuYmFvLnFxLmNvbS93YWxsZXQvc3FyY29kZS5odG0%2FbT10ZW5wYXkmZj13YWxsZXQmYT0xJnU9NTM2NzA2MTY0Jm49JUU1JUE0JUE5JUU1JUE0JUE5JUU5JUE1JUJGJUUyJTgxJUE3JUUyJTgxJUE3JTdFJUU1JTk2JUI1JUUyJTgxJUE3JUUyJTgwJUFEKyZhYz1DQUVROVBqMV93RVlrY1RDdWdZeURPUzRxdVM2dXVla3Z1UzZwRGdCUWlCbFl6UTBaV1l6T0dVeE56VXhaamMzTVRKaU1EazNaVGxpWmpRNU16Vm1OUSUzRCUzRF94eHhfc2lnbiIsIndlaXhpbiI6Ind4cDovL2YyZjBxNktPbnNXN1NIMnVteVZqTDhXbkR1VHExVHVuWDZOVlljMHBYWDJzY1NUV3lwaGI5ZEdoZEw1aUpaOWJ3LWNnIiwiYWxpcGF5IjoiaHR0cHM6Ly9xci5hbGlwYXkuY29tL2ZreDE2MjQzYXZtdmt6cjhrbWxjajViIn0%3D" class="btn-3d-ripple" target="_blank">赞助我们</a>
+                <a href="https://tool.guliucang.com/o/universal_pay_view/?data=eyJxcSI6Imh0dHBzOi8vaS5xaWFuYmFvLnFxLmNvbS93YWxsZXQvc3FyY29kZS5odG0%2FbT10ZW5wYXkmZj13YWxsZXQmYT0xJnU9NTM2NzA2MTY0Jm49JUU1JUE0JUE5JUU1JUE0JUE5JUU5JUE1JUJGJUUyJTgxJUE3JUUyJTgxJUE3JTdFJUU1JTk2JUI1JUUyJTgxJUE3JUUyJTgwJUFEKyZhYz1DQUVROVBqMV93RVlrY1RDdWdZeURPUzRxdVM2dXVla3Z1UzZwRGdCUWlCbFl6UTBaV1l6T0dVeE56VXhaamMzTVRKaU1EazNaVGxpWmpRNU16Vm1OUSUzRCUzRF94eHhfc2lnbiIsIndlaXhpbiI6Ind4cDovL2YyZjBxNktPbnNXN1NIMnVteVZqTDhXbkR1VHExVHVuWDZOVlljMHBYWDJzY1NUV3lwaGI5ZEdoZEw1aUpaOWJ3LWNnIiwiYWxpcGF5IjoiaHR0cHM6Ly9xci5hbGlwYXkuY29tL2ZreDE2MjQzYXZtdmt6cjhrbWxjajViIn0%3D"
+                    class="btn-3d-ripple" target="_blank">赞助我们</a>
                 <a href="/donor/index.html" class="btn-3d-ripple">捐赠者名单</a>
             </div>
         </section>
@@ -471,7 +481,8 @@
         <section id="links">
             <h2>友情链接</h2>
             <div class="button-group">
-                <a href="https://tiantiane0616.github.io" class="btn-3d-ripple"" target="_blank" rel="nofollow">作者网站</a>
+                <a href="https://tiantiane0616.github.io" class="btn-3d-ripple"" target=" _blank"
+                    rel="nofollow">作者网站</a>
                 <a href="http://www.xiao-es.top" class="btn-3d-ripple" target="_blank" rel="nofollow">ES网站</a>
                 <a href="https://moranworkshop.github.io" class="btn-3d-ripple" target="_blank" rel="nofollow">墨染工坊</a>
             </div>
@@ -480,13 +491,14 @@
 
     <footer>
         <p>&copy; 2024-2025 小饿工作室. 版权所有.<br>页面由@天天饿喵Tiantiane 制作构建</p>
+        <a href="sitemap.html">集合页面</a>
     </footer>
 
     <script>
         // 主题切换
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = themeToggle.querySelector('i');
-        
+
         function updateTheme() {
             const isDark = document.body.classList.contains('dark-mode');
             themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
@@ -499,8 +511,8 @@
         });
 
         // 初始化主题
-        const savedTheme = localStorage.getItem('theme') || 
-                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        const savedTheme = localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         document.body.classList.toggle('dark-mode', savedTheme === 'dark');
         updateTheme();
 
@@ -543,7 +555,8 @@
         });
 
         // 触摸设备优化
-        document.addEventListener('touchstart', function() {}, { passive: true });
+        document.addEventListener('touchstart', function () { }, { passive: true });
     </script>
 </body>
+
 </html>
