@@ -57,7 +57,11 @@
         </script>
 
     <style>
-        :root {
+        <script color="65,105,225" opacity="0.7" zIndex="-2" count="80" async
+        src="https://cdn.bootcss.com/canvas-nest.js/2.0.4/canvas-nest.js">
+    </script>
+
+    :root {
             --primary-color: #2A5CAA;
             --secondary-color: #3B82F6;
             --accent-color: #10B981;
@@ -252,6 +256,75 @@
             border: 1px solid var(--shadow-color);
         }
 
+        /* ========== 友情链接优化样式 ========== */
+        .friend-links {
+            position: relative;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: var(--section-bg);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px var(--shadow-color);
+        }
+
+        .friend-links h2 {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: block;
+            opacity: 0.8;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 0.75rem;
+            font-size: 0.92em;
+        }
+
+        .links-grid a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            opacity: 0.9;
+            background: rgba(127, 127, 127, 0.05);
+            border: 1px solid var(--shadow-color);
+        }
+
+        .links-grid a:hover {
+            background: rgba(var(--primary-color), 0.1);
+            opacity: 1;
+            transform: translateX(3px);
+            border-color: var(--primary-color);
+        }
+
+        .links-grid a::before {
+            content: "🔗";
+            font-size: 0.85em;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+
+        .links-grid a:hover::before {
+            opacity: 0.9;
+        }
+
+        .link-notice {
+            text-align: center;
+            font-size: 0.82em;
+            color: var(--text-color);
+            opacity: 0.6;
+            margin-top: 1.2rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--shadow-color);
+        }
+
         /* ========== 页脚样式 ========== */
         footer {
             background: var(--nav-bg);
@@ -276,6 +349,12 @@
         }
 
         /* ========== 响应式设计 ========== */
+        @media (max-width: 1200px) {
+            .links-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+        }
+
         @media (max-width: 992px) {
             header {
                 padding: 3rem 1rem;
@@ -318,7 +397,21 @@
                 font-size: 1.1rem;
             }
 
-            /* 按钮响应式调整 */
+            .friend-links {
+                margin: 1rem 0;
+                padding: 0.8rem;
+            }
+
+            .links-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 0.6rem;
+            }
+
+            .links-grid a {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.88em;
+            }
+
             .btn-3d-ripple {
                 padding: 0.8rem 1.5rem;
                 font-size: 0.9rem;
@@ -330,6 +423,19 @@
         @media (max-width: 480px) {
             header h1 {
                 font-size: 1.8rem;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .links-grid a {
+                padding: 0.5rem 1rem;
+                justify-content: center;
+            }
+
+            .link-notice {
+                font-size: 0.78em;
             }
 
             .btn-3d-ripple {
@@ -385,6 +491,7 @@
             animation: none !important;
             transition: none !important;
         }
+    </style>
     </style>
 </head>
 
@@ -480,11 +587,20 @@
 
         <section id="links">
             <h2>友情链接</h2>
-            <div class="button-group">
-                <a href="https://tiantiane0616.github.io" class="btn-3d-ripple"" target=" _blank"
-                    rel="nofollow">作者网站</a>
-                <a href="http://www.xiao-es.top" class="btn-3d-ripple" target="_blank" rel="nofollow">ES网站</a>
-                <a href="https://moranworkshop.github.io" class="btn-3d-ripple" target="_blank" rel="nofollow">墨染工坊</a>
+
+            <div class="friend-links">
+                <h2> (换链请联系tiantiane0616@126.com)</h2>
+                <div class="links-grid">
+                    <a href="https://tiantiane0616.github.io" target="_blank" rel="nofollow">天天饿的屑网站</a>
+                    <a href="http://www.xiao-es.top" target="_blank" rel="nofollow">ES丨个人网站</a>
+                    <a href="https://moranworkshop.github.io" target="_blank" rel="nofollow">墨染工坊</a>
+                    <!-- 可继续添加更多链接 -->
+                    <!-- 示例链接 -->
+                    <a href="http://www.ltsos.cn" target="_blank" rel="nofollow">蓝豚丨防溺水系统</a>
+                    <a href="#" target="_blank" rel="nofollow">示例链接</a>
+                    <a href="#" target="_blank" rel="nofollow">示例链接</a>
+                </div>
+                <p class="link-notice">期待与更多优质站点建立友情链接</p>
             </div>
         </section>
     </div>
